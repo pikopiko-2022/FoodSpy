@@ -29,6 +29,7 @@ body {
 
 .nav-update-btn {
   margin-right: 200px;
+  // padding: 0 3px 0 3px;
   font-size: 25pt;
   border-radius: 1rem;
   background-color: white;
@@ -37,5 +38,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;   
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+  // flex-direction: column;   
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
