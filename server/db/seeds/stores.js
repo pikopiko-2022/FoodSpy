@@ -1,13 +1,34 @@
 /**
  * @param { import("knex").Knex } knex
- * @returns { Promise<void> } 
+ * @returns { Promise<void> }
  */
-exports.seed = async function(knex) {
+exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('stores').del()
   await knex('stores').insert([
-    { id: 1, name: 'PAKnSAVE', location: 'PAKnSAVE Westgate' },
-    { id: 2, name: 'Countdown', location: 'Countdown Northwest' },
-    { id: 3, name: 'New World', location: 'New World Hobsonville' },
+    {
+      id: 1,
+      name: 'PAKnSAVE',
+      location: 'PAKnSAVE Westgate',
+      longitude: '',
+      latitude: '',
+      image: '',
+    },
+    {
+      id: 2,
+      name: 'Countdown',
+      location: 'Countdown Northwest',
+      longitude: '',
+      latitude: '',
+      image: '',
+    },
+    {
+      id: 3,
+      name: 'New World',
+      location: 'New World Hobsonville',
+      longitude: '',
+      latitude: '',
+      image: '',
+    },
   ])
-};
+}

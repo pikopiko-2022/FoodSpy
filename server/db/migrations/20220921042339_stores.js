@@ -7,6 +7,9 @@ exports.up = function (knex) {
     table.increments('id').primary()
     table.string('name')
     table.string('location')
+    table.decimal('longitude')
+    table.decimal('latitude')
+    table.text('image')
   })
 }
 
