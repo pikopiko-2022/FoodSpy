@@ -1,4 +1,5 @@
 import React from 'react'
+import Map from './Map'
 
 function Home() {
   return (
@@ -6,6 +7,7 @@ function Home() {
       <div>
         <h1>FoodSpy</h1>
       </div>
+      <Map />
     </>
   )
 }
