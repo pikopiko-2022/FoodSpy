@@ -15,23 +15,25 @@ function Map() {
   if (!isLoaded) return <div>Loading...</div>
 
   return (
-    <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
-      {/* Pak n save mt albert address */}
-      <Marker
-        position={{ lat: -36.893051, lng: 174.706238 }}
-        title="Pak n Save, Mt Abert"
-      />
-      {/* Countdown grey lynn address */}
-      <Marker
-        position={{ lat: -36.85836, lng: 174.7488 }}
-        title="Countdown, Grey Lynn"
-      />
-      {/* New World Victoria park address */}
-      <Marker
-        position={{ lat: -36.84829, lng: 174.75101 }}
-        title="New World, Victoria Park"
-      />
-    </GoogleMap>
+    <div className="map">
+      <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
+        {/* Pak n save mt albert address */}
+        <Marker
+          position={{ lat: -36.893051, lng: 174.706238 }}
+          title="Pak n Save, Mt Albert"
+        />
+        {/* Countdown grey lynn address */}
+        <Marker
+          position={{ lat: -36.85836, lng: 174.7488 }}
+          title="Countdown, Grey Lynn"
+        />
+        {/* New World Victoria park address */}
+        <Marker
+          position={{ lat: -36.84829, lng: 174.75101 }}
+          title="New World, Victoria Park"
+        />
+      </GoogleMap>
+    </div>
   )
 }
 

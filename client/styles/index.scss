@@ -16,7 +16,7 @@ body {
   justify-content:  space-between;
   align-items: center;
   background-color: rgb(119, 143, 231);
-  
+
 }
 
 .logo, a {
@@ -29,11 +29,11 @@ body {
 
 .nav-update-btn {
   margin-right: 200px;
-  // padding: 0 3px 0 3px;
   font-size: 25pt;
   border-radius: 1rem;
   background-color: white;
-  border-color: white;
+  // border-color: white;
+  border: none;
   // text-transform: uppercase;  
   display: flex;
   justify-content: center;
