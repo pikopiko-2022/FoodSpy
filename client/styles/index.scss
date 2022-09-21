@@ -31,13 +31,11 @@ body {
   margin-right: 200px;
   font-size: 25pt;
   border-radius: 1rem;
-  color: white;
-  border-color: none;
-  background-color: black;
+  background-color: white;
+  border-color: white;
+  // text-transform: uppercase;  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;   
-}
-
-
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
