@@ -12,7 +12,7 @@ img {
 
 .container{
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 2%;
@@ -23,10 +23,10 @@ img {
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin: 10px, 15px 15px 0px;
-  padding: 30px 3vw;
+  margin: 10px, 10px 10px 0px;
+  padding: 10px 3vw;
   cursor: pointer;
-  // border: 2px solid black;
+  border: 2px solid gray;
 }
 
 .foodContainer:hover .image {
