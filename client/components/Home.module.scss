@@ -1,8 +1,23 @@
-.dropdown{
-  color: orange;
-  width:350px;
-  align-items: center;
+// .dropdown{
+//   color: orange;
+//   width:350px;
+//   align-items: center;
 
+// }
+
+.dropdownContainer {
+  text-align: left;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 5px;
+}
+
+.dropdownInput {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
 }
 
 
