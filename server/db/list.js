@@ -1,7 +1,7 @@
 const connection = require('./connection')
 
 function getItemsByName(db = connection) {
-  return db('item').select()
+  return db('items').select()
 }
 
 // function getItemsByName(itemName, db = connection) {
