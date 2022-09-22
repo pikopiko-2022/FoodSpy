@@ -1,82 +1,78 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { getItem } from '../apis/apiClient'
+import { getAllItems } from '../apis/apiClient'
+import { useNavigate } from 'react-router-dom'
 
-import styles from './Home.module.scss'
-import Item from './Item'
+// import Item from './Item'
 
-function Home() {
-  const [item, setItem] = useState('')
+export default function Home() {
+  const [items, setItems] = useState([])
+  const [selectedItem, setSelectedItem] = useState([])
 
-  let { id } = useParams()
+  const navigate = useNavigate()
+  const { item_id, name } = selectedItem
 
   useEffect(() => {
-    getItem(id)
-      .then(() => {
-        setItem()
+    getAllItems()
+      .then((item) => {
+        setItems(item)
       })
       .catch((err) => {
-        console.log(err)
+        throw new Error(err.message)
       })
   }, [])
-  
-  
 
-
-    // const [city, setCity] = useState()
-    // useState
-
-    // function to handleClick
-    // function to handle change?
-    // const handleClick(e) {
-    //   e.target.value
-    // }
-
-    // const handleSubmit(e) {
-    //   e.preventDefault()
-    // }
-    // map over the items
-
-    return (
-      <>
-        {/* Drop down inserted to this page */}
-        <div>
-          <h1>A place to find the bare essentials on a budget </h1>
-        </div>
-
-        <div className={styles.Home}>
-          <form className={styles.dropdown}>
-            <b> Where are you? </b>
-            <select id="myList" onChange="favTutorial()">
-              <option> ---Choose city--- </option>
-              <option> Auckland </option>
-              <option> Napier </option>
-              <option> Wellington </option>
-              <option> Christchurch</option>
-            </select>
-          </form>
-        </div>
-
-        <div>
-          <form>
-            <b> What are you looking for? </b>
-            <select id="myList" onChange="foodItem()">
-              <option> ---Select--- </option>
-              <option> Milk</option>
-              <option> Eggs </option>
-              <option> Bread</option>
-              <option>Shopping List</option>
-            </select>
-          </form>
-        </div>
-        <div>
-          <Link to="./Item">
-            <button className="button">Show me the bargains!</button>
-          </Link>
-        </div>
-      </>
-    )
+  function handleChange(e) {
+    setSelectedItem({
+      ...selectedItem,
+      [e.target.name]: e.target.value,
+    })
   }
-}
 
-export default Home
+  function handleSubmit(e) {
+    e.preventDefault()
+    navigate(`/item/${item_id}`)
+  }
+
+  return (
+    <>
+      <h3 className="what">Where are you?</h3>
+      <form className>
+        <div>
+          <label htmlFor="place"></label>
+          <select id="myList" onChange="favTutorial()">
+            <option> ---Choose city--- </option>
+            <option> Auckland </option>
+            <option> Napier </option>
+            <option> Wellington </option>
+            <option> Christchurch</option>
+          </select>
+        </div>
+      </form>
+
+      <h3 className="what">What are you looking for?</h3>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="item_id"></label>
+          <select
+            id="item_id"
+            name="item_id"
+            value={item_id}
+            onChange={handleChange}
+          >
+            {items.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <button className="bargainsButton" onClick={handleSubmit}>
+            Show me the bargains!
+          </button>
+        </div>
+      </form>
+    </>
+  )
+}
