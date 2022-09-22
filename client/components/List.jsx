@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getList } from '../actions/list'
 import { getPrice } from '../actions/price'
+import { getItems } from '../actions/basket'
 import Basket from './Basket'
 import styles from './List.module.scss'
 
 function List() {
+  const [basket, setBasket] = useState({})
+
   const list = useSelector((state) => {
     return state.list
   })
@@ -15,10 +18,16 @@ function List() {
 
   useEffect(() => {
     dispatch(getList())
+    dispatch(getItems())
   }, [])
 
   function handleClick(itemId) {
-    dispatch(getPrice(itemId))
+    if (!basket[itemId]) {
+      setBasket({ ...basket, [itemId]: 1 })
+    } else {
+      const currentQuantity = basket[itemId]
+      setBasket({ ...basket, [itemId]: currentQuantity + 1 })
+    }
   }
 
   function handleSelect(e, itemId) {
@@ -51,7 +60,7 @@ function List() {
           )
         })}
         <h2>Basket: </h2>
-        <Basket />
+        <Basket basket={basket} />
       </div>
     </div>
   )
