@@ -12,15 +12,17 @@ function Dropdown() {
 
   return (
     <div className={styles.dropdownContainer}>
-      <form>
-        <b>What are you looking for?</b>
-        <select id="myList" onChange="favTutorial()">
-          <option> ---Select...--- </option>
-          <option> Milk </option>
-          <option> Eggs </option>
-          <option> Bread</option>
-        </select>
-      </form>
+      <div className={styles.dropdownInput}>
+        <form>
+          <b>What are you looking for?</b>
+          <select id="myList" onChange="favTutorial()">
+            <option> ---Select--- </option>
+            <option> Milk </option>
+            <option> Eggs </option>
+            <option> Bread</option>
+          </select>
+        </form>
+      </div>
     </div>
   )
 }
