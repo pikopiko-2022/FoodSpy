@@ -6,7 +6,6 @@ const router = express.Router()
 router.get('/:id', (req, res) => {
   db.getItemData(req.params.id)
     .then((item) => {
-      console.log(item)
       res.json(item)
     })
     .catch((err) => {

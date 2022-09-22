@@ -21,11 +21,11 @@ function Nav() {
       </h1>
       {/* click button and direct to the update form to complete */}
       {/* <div className="nav-update-btn"> */}
-      <Link to="/update">
+      {/* <Link to="/update">
         <button className="nav-update-btn">
           Update Item <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
         </button>
-      </Link>
+      </Link> */}
       {/* </div> */}
     </nav>
   )
