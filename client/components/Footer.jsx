@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer>
       <h2>FoodSpy 2022</h2>
-      <div className="footer-socials">
+      <div className="footer">
         {/* <FontAwesomeIcon icon={faInstagram} />
         <FontAwesomeIcon icon={faFacebook} /> */}
       </div>
