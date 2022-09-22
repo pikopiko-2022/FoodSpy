@@ -1,14 +1,12 @@
 import React from 'react'
-import Map from './Map'
 
 function Home() {
   return (
     <>
       {/* Drop down inserted to this page */}
       <div>
-        <h1>FoodSpy</h1>
+        <h1>A platform to find the best prices on essentials </h1>
       </div>
-      <Map />
     </>
   )
 }
