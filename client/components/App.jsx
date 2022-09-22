@@ -15,7 +15,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/item/id:" element={<Item />} />
+          <Route path="/item/:id" element={<Item />} />
           <Route path="/list" element={<List />} />
           <Route path="/update" element={<Update />} />
         </Routes>
