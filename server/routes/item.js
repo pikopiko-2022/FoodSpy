@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/:id', (req, res) => {
   const price = req.body.price
-  console.log(price)
+
   db.updatePrice(req.params.id, price)
     .then(() => {
       res.status(204).send()
