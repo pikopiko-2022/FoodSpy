@@ -38,8 +38,9 @@ function Item() {
 
   return (
     <>
+      {item && <h1 className="item-title">Prices for {item.name}</h1>}
+
       <div className="item-container">
-        {item && <h1 className="item-title">Prices for {item.name}</h1>}
         {itemData && (
           <div>
             {itemData.map((item) => (
@@ -51,11 +52,10 @@ function Item() {
             ))}
           </div>
         )}
-
-        <section className="map-section">
-          <Map />
-        </section>
       </div>
+      <section className="map-section">
+        <Map />
+      </section>
     </>
   )
 }
