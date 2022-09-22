@@ -11,20 +11,20 @@ body {
 
 .nav {
   width: 100%;
-  max-height: 150px;
+  max-height: 250px;
   display: flex;
-  justify-content:  space-between;
+  // justify-content:  space-between;
   align-items: center;
   background-color: rgb(119, 143, 231);
-
 }
 
 .logo, a {
   color:white;
   font-size: 55pt;
   text-decoration: none;
+  margin: auto;
   // padding-left: 30px;
-  margin-left: 100px;
+  // margin-left: 100px;
 }
 
 .nav-update-btn {
@@ -40,4 +40,30 @@ body {
   align-items: center;
   // flex-direction: column;   
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+
+// ITEMS PAGE
+
+ul {
+  list-style: none;
+}
+
+.item-container {
+  width: 100%;
+}
+
+.item-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.map-section {
+  display: flex;
+  margin: auto;
 }

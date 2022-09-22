@@ -13,3 +13,14 @@ export function getItem(id) {
     return res.body
   })
 }
+
+export function updateItemPrice(id, price) {
+  // update should be patch but we currently have it was post
+  // the path on our serverside
+  return request
+    .post(rootUrl + '/items' + id)
+    .send({ price: price })
+    .then((res) => {
+      return res.body
+    })
+}
