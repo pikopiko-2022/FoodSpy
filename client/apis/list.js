@@ -7,3 +7,9 @@ export function getListContent() {
     return res.body
   })
 }
+
+export function getPriceContent() {
+  return request.get(rootUrl + '/list').then((res) => {
+    return res.body
+  })
+}
