@@ -3,15 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getList } from '../actions/list'
 import { getPrice } from '../actions/price'
+import Basket from './Basket'
 import styles from './List.module.scss'
 
 function List() {
   const list = useSelector((state) => {
     return state.list
-  })
-
-  const items = useSelector((state) => {
-    return state.price
   })
 
   const dispatch = useDispatch()
@@ -22,22 +19,6 @@ function List() {
 
   function handleClick(itemId) {
     dispatch(getPrice(itemId))
-  }
-
-  let price = 0
-
-  if (items.length !== 0) {
-    const first = items[0]
-    const firstItem = Object.values(first)
-    const firstPrice = firstItem[6]
-    const second = items[1]
-    const secondItem = Object.values(second)
-    const secondPrice = secondItem[6]
-    const third = items[2]
-    const thirdItem = Object.values(third)
-    const thirdPrice = thirdItem[6]
-
-    console.log(firstPrice, secondPrice, thirdPrice)
   }
 
   function handleSelect(e, itemId) {
@@ -69,8 +50,9 @@ function List() {
             </div>
           )
         })}
+        <h2>Basket: </h2>
+        <Basket />
       </div>
-      <h2>Basket: {price}</h2>
     </div>
   )
 }
