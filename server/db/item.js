@@ -12,5 +12,5 @@ function getItems(db = connection) {
 }
 
 function getItem(id, db = connection) {
-  return db('item').select().where({ id }).first()
+  return db('items').select().where({ id }).first()
 }
