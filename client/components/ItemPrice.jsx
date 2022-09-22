@@ -15,7 +15,8 @@ function ItemPrice({ item, handleUpdate }) {
         width="200"
         height="200"
       />
-      {item.location}{' '}
+      {item.location}
+      <div> {item.description} </div>
       <div className="item-price">
         {' '}
         Price ${item.price}
