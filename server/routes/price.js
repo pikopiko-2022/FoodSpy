@@ -1,11 +1,12 @@
 const express = require('express')
 
-const db = require('../db/list')
+const db = require('../db/price')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getItems()
+  const id = req.query.id
+  db.getDataByItemId(id)
     .then((results) => {
       res.json(results)
     })

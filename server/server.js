@@ -3,6 +3,7 @@ const path = require('path')
 
 const homeRoutes = require('./routes/home')
 const listRoutes = require('./routes/list')
+const priceRoutes = require('./routes/price')
 const items = require('./routes/item')
 const itemData = require('./routes/itemData')
 
@@ -13,6 +14,7 @@ server.use(express.static(path.join(__dirname, 'public')))
 
 server.use('/api/v1/home', homeRoutes)
 server.use('/api/v1/list', listRoutes)
+server.use('/api/v1/price', priceRoutes)
 server.use('/api/v1/items', items)
 server.use('/api/v1/item-data', itemData)
 

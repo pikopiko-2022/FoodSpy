@@ -2,7 +2,7 @@ import { SET_LIST_CONTENT } from '../actions/list'
 
 const initialState = []
 
-const results = (state = initialState, action) => {
+const list = (state = initialState, action) => {
   const { type, payload } = action
 
   switch (type) {
@@ -12,4 +12,4 @@ const results = (state = initialState, action) => {
       return state
   }
 }
-export default results
+export default list
