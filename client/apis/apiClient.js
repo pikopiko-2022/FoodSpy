@@ -15,10 +15,11 @@ export function getItem(id) {
 }
 
 export function updateItemPrice(id, price) {
+  console.log('id', id)
   // update should be patch but we currently have it was post
   // the path on our serverside
   return request
-    .post(rootUrl + '/items' + id)
+    .post(rootUrl + '/items/' + id)
     .send({ price: price })
     .then((res) => {
       return res.body
