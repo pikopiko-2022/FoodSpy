@@ -1,11 +1,10 @@
 img {
-  width: 20vw;
-  height: 20vw;
+  width: 8vw;
+  height: 8vw;
   object-fit: cover;
 }
 .image {
   opacity: 1;
-
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -15,7 +14,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2%;
+  margin: 1%;
 }
 
 .foodContainer {
@@ -23,13 +22,12 @@ img {
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin: 10px, 10px 10px 0px;
-  padding: 10px 3vw;
+  margin: 0px, 0px 0px 0px;
+  padding: 5px 3vw;
   cursor: pointer;
-  border: 2px solid gray;
+  border: 1px solid gray;
 }
 
 .foodContainer:hover .image {
-  
   opacity: 0.4;
 }

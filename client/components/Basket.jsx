@@ -11,12 +11,15 @@ function Basket({ basket }) {
     runningTotal[itemData.location] = 0
   })
 
+  let clickedTotal = 0
+
   Object.keys(basket).forEach((itemId) => {
     allItems.forEach((complexData) => {
       if (complexData.item_id == itemId) {
         runningTotal[complexData.location] =
           runningTotal[complexData.location] +
           complexData.price * basket[itemId]
+        clickedTotal = basket[itemId]
       }
     })
   })
@@ -33,7 +36,7 @@ function Basket({ basket }) {
   return (
     <div>
       <h2>
-        {bestPrice} {bestLocation}
+        {bestPrice} {bestLocation} {clickedTotal}
       </h2>
     </div>
   )

@@ -38,7 +38,7 @@ function Item() {
 
   return (
     <>
-      {item && <h1 className="item-title">Prices for {item.name}</h1>}
+      {item && <h1 className="item-title">Prices for {item.item_name}</h1>}
 
       <div className="item-container">
         {itemData && (
