@@ -57,7 +57,7 @@ describe('GET /api/v1/item', () => {
     getItem.mockImplementation(() => Promise.reject(new Error('Server error')))
     console.error.mockImplementation(() => {})
     return request(server)
-      .get('/api/v1/item/1')
+      .get('/api/v1/items/1')
       .then((res) => {
         expect(res.status).toBe(500)
         expect(console.error).toHaveBeenCalledWith('Server error')
