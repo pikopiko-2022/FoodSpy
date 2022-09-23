@@ -11,7 +11,7 @@ function ItemPrice({ item, handleUpdate }) {
       <img
         className="store-image"
         src={item.image}
-        alt={item.name}
+        alt={item.item_name}
         width="200"
         height="200"
       />

@@ -38,7 +38,7 @@ function List() {
 
   return (
     <div>
-      <h1>Choose grocery items:</h1>
+      <h2>Add items to your basket:</h2>
       <div className={styles.container}>
         {list.map((item) => {
           return (
@@ -52,10 +52,10 @@ function List() {
             >
               <img
                 src={item.image_url}
-                alt={item.name}
+                alt={item.item_name}
                 className={styles.image}
               />
-              <h3>{item.name}</h3>
+              <h3>{item.item_name}</h3>
             </div>
           )
         })}
