@@ -37,11 +37,10 @@ export default function Home() {
 
   return (
     <>
-      <h3 className="what">Where are you?</h3>
+      <h3>1. Where are you?</h3>
       <form>
         <div>
-          <label htmlFor="place"></label>
-          <select id="place">
+          <select>
             <option value=""> ---Choose city--- </option>
             <option value="auckland"> Auckland </option>
             <option value="napier">Napier </option>
@@ -51,16 +50,17 @@ export default function Home() {
         </div>
       </form>
 
-      <h3 className="what">What are you looking for?</h3>
+      <h3>2. What are you looking for?</h3>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="item_id">Item</label>
+          <label htmlFor="item_id"></label>
           <select
             id="item_id"
             name="item_id"
             value={item_id}
             onChange={handleChange}
           >
+            <option value=""> ---Choose item--- </option>
             {items.map((item) => (
               <option key={item.id} value={item.id}>
                 {item.name}
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         <div>
-          <button className="bargainsButton" onClick={handleSubmit}>
+          <button className="bargainSubmitButton" onClick={handleSubmit}>
             Show me the bargains!
           </button>
         </div>
