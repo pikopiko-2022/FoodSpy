@@ -39,19 +39,42 @@ describe('GET /api/v1/items', () => {
   })
 })
 
+describe('GET /api/v1/item', () => {
+  it('gets single items from the database', () => {
+    expect.assertions(2)
+    db.getItem.mockReturnValue(
+      Promise.resolve([{ name: 'bob' }, { name: 'steve' }])
+    )
+    return request(server)
+      .get('/api/v1/items/1')
+      .then((res) => {
+        expect(res.body).toHaveLength(2)
+        expect(res.body[1].name).toBe('steve')
+      })
+  })
+})
+
 describe('POST /api/v1/items', () => {
   it('return updated item information', () => {
-    // const fakeData = {
-    //   price: 3.84,
-    //   item_id: 1,
-    // }
-    updatePrice.mockReturnValue(Promise.resolve(1))
+    expect.assertions(1)
+    updatePrice.mockReturnValue(Promise.resolve())
     return request(server)
-      .post('/api/v1/items')
-      .send({ price: 3.84 })
+      .post('/api/v1/items/1')
       .then((res) => {
-        console.log(updatePrice.mock.calls)
-        expect(res.body.price).toBe(3.84)
+        expect(res.status).toBe(204)
+      })
+  })
+  it('returns status 500 and consoles error', () => {
+    // expect.assertions(2)
+    updatePrice.mockImplementation(() =>
+      Promise.reject(new Error('Server error'))
+    )
+    console.error.mockImplementation(() => {})
+    return request(server)
+      .post('/api/v1/items/2')
+      .then((res) => {
+        expect(res.status).toBe(500)
+        expect(console.error).toHaveBeenCalledWith('Server error')
       })
   })
 })
