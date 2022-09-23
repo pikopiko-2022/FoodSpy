@@ -31,7 +31,7 @@ router.post('/:id', (req, res) => {
 
   db.updatePrice(req.params.id, price)
     .then(() => {
-      res.status(204).send()
+      res.sendStatus(204)
     })
     .catch((err) => {
       console.error(err.message)
