@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import styles from '../styles/List.module.scss'
+
 function Basket({ basket, setBasket }) {
   const allItems = useSelector((state) => {
     return state.basket
@@ -34,40 +36,71 @@ function Basket({ basket, setBasket }) {
     if (quantity - 1 == 0) {
       const basketCopy = { ...basket }
       delete basketCopy[itemId]
-      console.log(basketCopy)
       setBasket(basketCopy)
       return
     }
     setBasket({ ...basket, [itemId]: { name: name, quantity: quantity - 1 } })
   }
 
+  function handlePlusClick(itemId, name, quantity) {
+    // if (quantity + 1 > 0) {
+    //   const basketCopy = { ...basket }
+    //   delete basketCopy[itemId]
+    //   setBasket(basketCopy)
+    //   return
+    // }
+    setBasket({ ...basket, [itemId]: { name: name, quantity: quantity + 1 } })
+  }
+
   return (
     <div>
       {Object.keys(basket).map((itemId) => {
         return (
-          <p key={basket[itemId].name}>
-            {basket[itemId].name} {basket[itemId].quantity}
-            <button
-              onClick={() => {
-                handleMinusClick(
-                  itemId,
-                  basket[itemId].name,
-                  basket[itemId].quantity
-                )
-              }}
-            >
-              minus
-            </button>
-          </p>
+          <>
+            <p>{basket[itemId].name}</p>
+            <p className={styles.smallText} key={basket[itemId].name}>
+              Item count: {basket[itemId].quantity} {''}
+              {''}
+              <button
+                className={styles.minus}
+                onClick={() => {
+                  handleMinusClick(
+                    itemId,
+                    basket[itemId].name,
+                    basket[itemId].quantity
+                  )
+                }}
+              >
+                -
+              </button>{' '}
+              {''}
+              <button
+                className={styles.plus}
+                onClick={() => {
+                  handlePlusClick(
+                    itemId,
+                    basket[itemId].name,
+                    basket[itemId].quantity
+                  )
+                }}
+              >
+                +
+              </button>
+            </p>
+          </>
         )
       })}
-      <h2>
+      <p>
         {bestPrice !== 0 && (
           <>
-            {bestPrice} {bestLocation}
+            <p>Cheapest store:</p>
+            <p>{bestLocation}</p>
+            <p>
+              <b>Total: $ {Number(bestPrice).toFixed(2)}</b>
+            </p>
           </>
         )}
-      </h2>
+      </p>
     </div>
   )
 }
