@@ -14,19 +14,17 @@ function Nav() {
     <nav className="nav">
       <h1 className="logo">
         <Link to={'/'}> FoodSpy </Link>
-        {/* <FontAwesomeIcon icon={faUserSecret} />
-        <FontAwesomeIcon icon={faBinoculars} /> */}
         <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
         <FontAwesomeIcon icon={faCartShopping} />
       </h1>
-      {/* click button and direct to the update form to complete */}
-      {/* <div className="nav-update-btn"> */}
-      {/* <Link to="/update">
-        <button className="nav-update-btn">
-          Update Item <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
-        </button>
-      </Link> */}
-      {/* </div> */}
+
+      <div className="nav-btn">
+        <Link to="/list">
+          <button className="nav-list-btn">
+            Shopping List <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
+          </button>
+        </Link>
+      </div>
     </nav>
   )
 }
