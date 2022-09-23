@@ -26,20 +26,36 @@ body {
   padding-top: 20px;
 }
 
-.nav-btn {
-  margin-right: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-list-btn {
-  font-size: 20pt;
+.btn {
+  font-size: 15pt;
   border-radius: 1rem;
   background-color: white;
   border: none;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
+  color: rgb(65, 64, 64);
+}
+
+.nav-btn {
+  margin-right: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+.nav-list-btn {
+  font-size: 15pt;
+  border-radius: 1rem;
+  background-color: white;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  color: rgb(65, 64, 64);
+
 }
 
 // ------ ITEMS PAGE ------
@@ -122,11 +138,11 @@ footer {
   font-size: 8pt;
   color:white;
   bottom: 0;
-  position: absolute;
+  position: relative;
 
 }
 
-.what{
+h3 {
   color:rgb(119, 143, 231);
   display: flex;
   align-items: center;
@@ -136,16 +152,33 @@ footer {
   margin-top: 70px;
 }
 
-.bargainsButton{
-  background-color: rgb(119, 143, 231);
+.bargainSubmitButton{
+  background-color:rgb(91, 137, 91);
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   border-radius: 10px;
-  border-color:rgb(119, 143, 231);
+  border:none;
   padding: 12px 28px;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 200px;
 }
 
+select {
+  background-color:rgb(119, 143, 231);
+  padding:12px 30px;
+  border-radius:10px;
+  color:white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top:30px;
+
+  
+}

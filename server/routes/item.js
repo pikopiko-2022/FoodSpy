@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
       res.json(results)
     })
     .catch((err) => {
-      console.log(err)
-      res.status(500).json({ message: 'Server error' })
+      console.error(err.message)
+      res.status(500).send('Server error')
     })
 })
 
@@ -31,7 +31,7 @@ router.post('/:id', (req, res) => {
 
   db.updatePrice(req.params.id, price)
     .then(() => {
-      res.status(204).send()
+      res.sendStatus(204)
     })
     .catch((err) => {
       console.error(err.message)
