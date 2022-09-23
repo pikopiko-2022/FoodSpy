@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Update from './Update'
+// import Update from './Update'
+import AuthNav from '../components/auth/auth-nav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   // faUserSecret,
@@ -19,6 +20,7 @@ function Nav() {
       </h1>
 
       <div className="nav-btn">
+        <AuthNav />
         <Link to="/list">
           <button className="nav-list-btn">
             Shopping List <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
