@@ -26,6 +26,6 @@ export function updateItemPrice(id, price) {
     })
 }
 
-export const getAllItems = () => {
+export function getAllItems() {
   return request.get(rootUrl + '/items/').then((res) => res.body)
 }
