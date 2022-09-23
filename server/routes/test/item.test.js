@@ -1,7 +1,7 @@
 const request = require('supertest')
 const server = require('../../server')
 const db = require('../../db/item')
-const { getItems, updatePrice } = require('../../db/item')
+const { getItems, updatePrice, getItem } = require('../../db/item')
 
 require('@testing-library/jest-dom')
 
@@ -50,6 +50,17 @@ describe('GET /api/v1/item', () => {
       .then((res) => {
         expect(res.body).toHaveLength(2)
         expect(res.body[1].name).toBe('steve')
+      })
+  })
+  it('returns status 500 and consoles error', () => {
+    expect.assertions(2)
+    getItem.mockImplementation(() => Promise.reject(new Error('Server error')))
+    console.error.mockImplementation(() => {})
+    return request(server)
+      .get('/api/v1/item/1')
+      .then((res) => {
+        expect(res.status).toBe(500)
+        expect(console.error).toHaveBeenCalledWith('Server error')
       })
   })
 })
