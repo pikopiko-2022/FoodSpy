@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-function Basket({ basket }) {
+function Basket({ basket, setBasket }) {
   const allItems = useSelector((state) => {
     return state.basket
   })
@@ -11,15 +11,12 @@ function Basket({ basket }) {
     runningTotal[itemData.location] = 0
   })
 
-  let clickedTotal = 0
-
   Object.keys(basket).forEach((itemId) => {
     allItems.forEach((complexData) => {
       if (complexData.item_id == itemId) {
         runningTotal[complexData.location] =
           runningTotal[complexData.location] +
-          complexData.price * basket[itemId]
-        clickedTotal = basket[itemId]
+          complexData.price * basket[itemId].quantity
       }
     })
   })
@@ -33,10 +30,43 @@ function Basket({ basket }) {
     }
   })
 
+  function handleMinusClick(itemId, name, quantity) {
+    if (quantity - 1 == 0) {
+      const basketCopy = { ...basket }
+      delete basketCopy[itemId]
+      console.log(basketCopy)
+      setBasket(basketCopy)
+      return
+    }
+    setBasket({ ...basket, [itemId]: { name: name, quantity: quantity - 1 } })
+  }
+
   return (
     <div>
+      {Object.keys(basket).map((itemId) => {
+        return (
+          <p key={basket[itemId].name}>
+            {basket[itemId].name} {basket[itemId].quantity}
+            <button
+              onClick={() => {
+                handleMinusClick(
+                  itemId,
+                  basket[itemId].name,
+                  basket[itemId].quantity
+                )
+              }}
+            >
+              minus
+            </button>
+          </p>
+        )
+      })}
       <h2>
-        {bestPrice} {bestLocation} {clickedTotal}
+        {bestPrice !== 0 && (
+          <>
+            {bestPrice} {bestLocation}
+          </>
+        )}
       </h2>
     </div>
   )
