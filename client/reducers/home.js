@@ -1,6 +1,9 @@
 import { SET_HOME_CONTENT } from '../actions/home'
 
-const initialState = {}
+const initialState = {
+  // name: 'Home',
+  // image_url: '/images/Piggy.jpg',
+}
 
 const home = (state = initialState, action) => {
   const { type, payload } = action
