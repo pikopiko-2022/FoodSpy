@@ -33,18 +33,20 @@ export default function Home() {
     navigate(`/item/${item_id}`)
   }
 
+  console.log('selected item', selectedItem)
+
   return (
     <>
       <h3 className="what">Where are you?</h3>
-      <form className>
+      <form>
         <div>
           <label htmlFor="place"></label>
-          <select id="myList" onChange="favTutorial()">
-            <option> ---Choose city--- </option>
-            <option> Auckland </option>
-            <option> Napier </option>
-            <option> Wellington </option>
-            <option> Christchurch</option>
+          <select id="place">
+            <option value=""> ---Choose city--- </option>
+            <option value="auckland"> Auckland </option>
+            <option value="napier">Napier </option>
+            <option value="wellington">Wellington </option>
+            <option value="christchurch">Christchurch</option>
           </select>
         </div>
       </form>
@@ -52,7 +54,7 @@ export default function Home() {
       <h3 className="what">What are you looking for?</h3>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="item_id"></label>
+          <label htmlFor="item_id">Item</label>
           <select
             id="item_id"
             name="item_id"
