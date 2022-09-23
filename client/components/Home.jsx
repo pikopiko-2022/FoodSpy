@@ -63,7 +63,7 @@ export default function Home() {
             <option value=""> ---Choose item--- </option>
             {items.map((item) => (
               <option key={item.id} value={item.id}>
-                {item.name}
+                {item.item_name}
               </option>
             ))}
           </select>
