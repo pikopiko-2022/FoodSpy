@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
   const [items, setItems] = useState([])
-  const [selectedItem, setSelectedItem] = useState([])
+  const [selectedItem, setSelectedItem] = useState({})
 
   const navigate = useNavigate()
   const { item_id } = selectedItem
@@ -31,6 +31,8 @@ export default function Home() {
     navigate(`/item/${item_id}`)
   }
 
+  console.log('current items', selectedItem)
+
   return (
     <>
       <h3>1. Where are you?</h3>
@@ -38,9 +40,9 @@ export default function Home() {
         <div>
           <select>
             <option value=""> ---Choose city--- </option>
-            <option value="auckland"> Auckland </option>
-            <option value="napier">Napier </option>
-            <option value="wellington">Wellington </option>
+            <option value="auckland">Auckland</option>
+            <option value="napier">Napier</option>
+            <option value="wellington">Wellington</option>
             <option value="christchurch">Christchurch</option>
           </select>
         </div>
@@ -65,11 +67,13 @@ export default function Home() {
           </select>
         </div>
 
-        <div>
-          <button className="bargainSubmitButton" onClick={handleSubmit}>
-            Show me the bargains!
-          </button>
-        </div>
+        {selectedItem.item_id && (
+          <div>
+            <button className="bargainSubmitButton" onClick={handleSubmit}>
+              Show me the bargains!
+            </button>
+          </div>
+        )}
       </form>
     </>
   )
