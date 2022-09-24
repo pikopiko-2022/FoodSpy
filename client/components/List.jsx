@@ -5,7 +5,6 @@ import { getList } from '../actions/list'
 import { getPrice } from '../actions/price'
 import { getItems } from '../actions/basket'
 import Basket from './Basket'
-import styles from './List.module.scss'
 
 function List() {
   const [basket, setBasket] = useState({})
@@ -22,11 +21,15 @@ function List() {
   }, [])
 
   function handleClick(itemId) {
+    const item = list.find((el) => el.id == itemId)
     if (!basket[itemId]) {
-      setBasket({ ...basket, [itemId]: 1 })
+      setBasket({ ...basket, [itemId]: { name: item.item_name, quantity: 1 } })
     } else {
-      const currentQuantity = basket[itemId]
-      setBasket({ ...basket, [itemId]: currentQuantity + 1 })
+      const currentQuantity = basket[itemId].quantity
+      setBasket({
+        ...basket,
+        [itemId]: { name: item.item_name, quantity: currentQuantity + 1 },
+      })
     }
   }
 
@@ -37,30 +40,34 @@ function List() {
   }
 
   return (
-    <div>
-      <h2>Add items to your basket:</h2>
-      <div className={styles.container}>
-        {list.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className={styles.foodContainer}
-              role="button"
-              onClick={() => handleClick(item.id)}
-              onKeyDown={(e) => handleSelect(e, item.id)}
-              tabIndex="0"
-            >
-              <img
-                src={item.image_url}
-                alt={item.item_name}
-                className={styles.image}
-              />
-              <h3>{item.item_name}</h3>
-            </div>
-          )
-        })}
+    <div className="overallContainer">
+      <div className="listContainer">
+        <h2>Add items to your basket:</h2>
+        <div>
+          {list.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="foodContainer"
+                role="button"
+                onClick={() => handleClick(item.id)}
+                onKeyDown={(e) => handleSelect(e, item.id)}
+                tabIndex="0"
+              >
+                <img
+                  className="listImage"
+                  src={item.image_url}
+                  alt={item.item_name}
+                />
+                <h3 className="listHeading">{item.item_name}</h3>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      <div className="basketContainer">
         <h2>Basket: </h2>
-        <Basket basket={basket} />
+        <Basket basket={basket} setBasket={setBasket} />
       </div>
     </div>
   )
