@@ -51,7 +51,6 @@ export default function Home() {
       <h3>2. What are you looking for?</h3>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="item_id"></label>
           <select
             id="item_id"
             name="item_id"

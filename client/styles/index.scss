@@ -11,7 +11,7 @@ body {
 
 .nav {
   width: 100%;
-  max-height: 250px;
+  max-height: 75px;
   display: flex;
   align-items: center;
   background-color: rgb(119, 143, 231);
@@ -19,11 +19,10 @@ body {
 
 .logo, a {
   color:white;
-  font-size: 55pt;
+  font-size: 50pt;
   text-decoration: none;
   margin: auto;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  
 }
 
 .btn {
@@ -34,7 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  color: rgb(65, 64, 64);
+  color: rgb(119, 143, 231);
 }
 
 .nav-btn {
@@ -42,7 +41,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  // flex-direction: column;
+
+
 }
 
 .nav-list-btn {
@@ -52,7 +53,8 @@ body {
   border: none;
   justify-content: center;
   align-items: center;
-  color: rgb(65, 64, 64);
+  color: rgb(119, 143, 231);
+  
 
 }
 
@@ -71,6 +73,7 @@ body {
   margin-top: 65px;
   margin-bottom: 65px;
   font-size: 30pt;
+  color:rgb(119, 143, 231);
 }
 
 .item-result {
@@ -129,16 +132,15 @@ border-color:  rgb(211, 241, 211);
 
 footer {
   width: 100%;
-  min-height: 50px;
   background-color: rgb(119, 143, 231);
   display: flex;
   justify-content: center;
   margin: auto;
   align-items: center;
-  font-size: 8pt;
+  font-size: 7pt;
   color:white;
   bottom: 0;
-  position: relative;
+  position:fixed;
 
 }
 
@@ -149,11 +151,11 @@ h3 {
   justify-content: center;
   margin: auto;
   font-size: 30px;
-  margin-top: 70px;
+  margin-top: 90px;
 }
 
 .bargainSubmitButton{
-  background-color:rgb(91, 137, 91);
+  background-color:goldenrod;
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
@@ -165,7 +167,7 @@ h3 {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 130px;
 }
 
 select {
@@ -179,69 +181,9 @@ select {
   justify-content: center;
   margin: auto;
   margin-top:30px;
-
+  font-size: 20px;
   
 }
 
-//-------- LIST PAGE ---------
 
-.listImage {
-  border: 1px solid lightgrey;
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-}
 
-.overallContainer {
-  display: flex;
-}
-
-.basketContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 0px 30px;
-  position: absolute;
-  right: 0;
-}
-
-.listContainer {
-  padding: 0px 20px;
-}
-
-.foodContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.listHeading {
-  color:rgb(119, 143, 231);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.smallBasketText {
-  font-size: smaller;
-  margin-top: -10px;
-}
-
-.minusButton {
-  font-size: 8pt;
-  background-color: rgb(251, 196, 185);
-  border-radius: 7px;
-  border-color: rgb(251, 196, 185);
-  margin-left: 7px;
-}
-
-.plusButton {
-  font-size: 8pt;
-  background-color: rgb(211, 241, 211);
-  border-radius: 7px;
-  border-color:  rgb(211, 241, 211);
-  margin-left: 5px;
-}

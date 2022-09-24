@@ -23,7 +23,7 @@ function Nav() {
         <AuthNav />
         <Link to="/list">
           <button className="nav-list-btn">
-            Shopping List <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
+            Basket <FontAwesomeIcon icon={faMagnifyingGlassDollar} />
           </button>
         </Link>
       </div>
