@@ -1,12 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import styles from '../styles/List.module.scss'
-
 function Basket({ basket, setBasket }) {
   const allItems = useSelector((state) => {
     return state.basket
   })
+
+  console.log(basket)
+
+  console.log(allItems)
 
   const runningTotal = {}
   allItems.forEach((itemData) => {
@@ -43,12 +45,6 @@ function Basket({ basket, setBasket }) {
   }
 
   function handlePlusClick(itemId, name, quantity) {
-    // if (quantity + 1 > 0) {
-    //   const basketCopy = { ...basket }
-    //   delete basketCopy[itemId]
-    //   setBasket(basketCopy)
-    //   return
-    // }
     setBasket({ ...basket, [itemId]: { name: name, quantity: quantity + 1 } })
   }
 
@@ -58,11 +54,10 @@ function Basket({ basket, setBasket }) {
         return (
           <>
             <p>{basket[itemId].name}</p>
-            <p className={styles.smallText} key={basket[itemId].name}>
-              Item count: {basket[itemId].quantity} {''}
-              {''}
+            <p className="smallBasketText" key={itemId}>
+              Item count: {basket[itemId].quantity}
               <button
-                className={styles.minus}
+                className="minusButton"
                 onClick={() => {
                   handleMinusClick(
                     itemId,
@@ -72,10 +67,9 @@ function Basket({ basket, setBasket }) {
                 }}
               >
                 -
-              </button>{' '}
-              {''}
+              </button>
               <button
-                className={styles.plus}
+                className="plusButton"
                 onClick={() => {
                   handlePlusClick(
                     itemId,
@@ -90,7 +84,7 @@ function Basket({ basket, setBasket }) {
           </>
         )
       })}
-      <p>
+      <div>
         {bestPrice !== 0 && (
           <>
             <p>Cheapest store:</p>
@@ -100,7 +94,7 @@ function Basket({ basket, setBasket }) {
             </p>
           </>
         )}
-      </p>
+      </div>
     </div>
   )
 }
