@@ -43,8 +43,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-
 }
 
 .nav-list-btn {
@@ -70,8 +68,8 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 65px;
+  margin-bottom: 65px;
   font-size: 30pt;
 }
 
@@ -88,9 +86,11 @@ body {
 }
 
 .store-image {
-  border: 3px solid #555;
+  border: 3px solid lightgray;
   width: 200px;
   height: 200px;
+  border-radius: 100px;
+  padding: 3px;
 
 }
 
@@ -121,8 +121,8 @@ border-color:  rgb(211, 241, 211);
   display: flex;
   justify-content: center;
   margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 65px;
+  margin-bottom: 65px;
 }
 
 // ---- FOOTER ----
