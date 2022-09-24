@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { getAllItems } from '../apis/apiClient'
 import { useNavigate } from 'react-router-dom'
 
-// import Item from './Item'
-
 export default function Home() {
   const [items, setItems] = useState([])
   const [selectedItem, setSelectedItem] = useState([])
 
   const navigate = useNavigate()
-  const { item_id, name } = selectedItem
+  const { item_id } = selectedItem
 
   useEffect(() => {
     getAllItems()
@@ -32,8 +30,6 @@ export default function Home() {
     e.preventDefault()
     navigate(`/item/${item_id}`)
   }
-
-  console.log('selected item', selectedItem)
 
   return (
     <>

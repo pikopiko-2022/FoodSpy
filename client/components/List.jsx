@@ -5,7 +5,7 @@ import { getList } from '../actions/list'
 import { getPrice } from '../actions/price'
 import { getItems } from '../actions/basket'
 import Basket from './Basket'
-import styles from './List.module.scss'
+import styles from '../styles/List.module.scss'
 
 function List() {
   const [basket, setBasket] = useState({})
@@ -34,8 +34,6 @@ function List() {
     }
   }
 
-  console.log(basket)
-
   function handleSelect(e, itemId) {
     if (e.keyCode == 13) {
       dispatch(getPrice(itemId))
@@ -44,7 +42,7 @@ function List() {
 
   return (
     <div className={styles.overall}>
-      <div>
+      <div className={styles.listContainer}>
         <h2>Add items to your basket:</h2>
         <div className={styles.container}>
           {list.map((item) => {
@@ -58,17 +56,17 @@ function List() {
                 tabIndex="0"
               >
                 <img
+                  className={styles.itemImage}
                   src={item.image_url}
                   alt={item.item_name}
-                  className={styles.image}
                 />
-                <h3>{item.item_name}</h3>
+                <h3 className={styles.itemHeading}>{item.item_name}</h3>
               </div>
             )
           })}
         </div>
       </div>
-      <div>
+      <div className={styles.basketContainer}>
         <h2>Basket: </h2>
         <Basket basket={basket} setBasket={setBasket} />
       </div>
