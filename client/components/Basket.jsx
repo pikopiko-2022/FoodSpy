@@ -6,16 +6,12 @@ function Basket({ basket, setBasket }) {
     return state.basket
   })
 
-  console.log(basket)
-
-  console.log(allItems)
-
   const runningTotal = {}
-  allItems.forEach((itemData) => {
+  allItems?.forEach?.((itemData) => {
     runningTotal[itemData.location] = 0
   })
 
-  Object.keys(basket).forEach((itemId) => {
+  Object.keys(basket || {}).forEach((itemId) => {
     allItems.forEach((complexData) => {
       if (complexData.item_id == itemId) {
         runningTotal[complexData.location] =
@@ -27,7 +23,7 @@ function Basket({ basket, setBasket }) {
 
   let bestLocation = ''
   let bestPrice = 0
-  Object.keys(runningTotal).forEach((location) => {
+  Object.keys(runningTotal || {}).forEach((location) => {
     if (bestPrice == 0 || runningTotal[location] < bestPrice) {
       bestLocation = location
       bestPrice = runningTotal[location]
@@ -50,7 +46,7 @@ function Basket({ basket, setBasket }) {
 
   return (
     <div>
-      {Object.keys(basket).map((itemId) => {
+      {Object.keys(basket || {}).map((itemId) => {
         return (
           <>
             <p>{basket[itemId].name}</p>

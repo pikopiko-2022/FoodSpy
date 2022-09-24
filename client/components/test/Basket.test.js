@@ -1,14 +1,14 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch, Provider } from 'react-redux'
 import { render, screen } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
+import userEvent from '@testing-library/user-event'
 
+import { getItems } from '../../actions/basket'
 import Basket from '../Basket'
 
-const fakeBasket = {
-  1: { name: 'Milk', quantity: 1 },
-  2: { name: 'Eggs', quantity: 3 },
-}
+const fakeBasket = { name: 'Milk', quantity: 2 }
 
 const fakeAllItems = [
   {
@@ -27,22 +27,85 @@ const fakeAllItems = [
   },
 ]
 
-jest.mock('react-redux')
+// jest.mock('react-redux')
+jest.mock('../../actions/basket')
 
-beforeEach(() => {
-  jest.clearAllMocks()
-})
+const fakeDispatch = jest.fn()
+const getItemsMockReturn = jest.fn()
+getItems.mockReturnValue(fakeAllItems)
 
 describe('<Basket />', () => {
-  // it('should display the basket correctly', () => {
-  //   useSelector.mockReturnValue(fakeAllItems)
-  //   Object.keys(fakeBasket)
-  //   render(<Basket />)
-  //   const button = screen.getAllByRole('button')
-  //   expect(button).toHaveLength(2)
-  //   expect(button[0]).toContain('-')
-  // })
-  it('checks for keys in obj', () => {
-    expect(Object.keys(fakeBasket).sort()).toEqual(['1', '2'].sort())
+  beforeEach(() => {
+    jest.clearAllMocks()
   })
+
+  const fakeStore = {
+    subscribe: jest.fn(),
+    dispatch: jest.fn(),
+    getState: jest.fn(() => {
+      return { basket: fakeBasket }
+    }),
+  }
+
+  it('gets name and quantity from redux state', () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Basket />
+        </BrowserRouter>
+      </Provider>
+    )
+    const itemName = screen.findByText(fakeBasket.name, {
+      exact: false,
+    })
+    const itemQuantity = screen.findByText(fakeBasket.quantity)
+    expect.assertions(2)
+    expect(itemName).toBeTruthy()
+    expect(itemQuantity).toBeTruthy()
+  })
+  it('displays buttons', async () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Basket />
+        </BrowserRouter>
+      </Provider>
+    )
+    const button = screen.findByRole('button')
+    expect.assertions(1)
+    expect(button).toBeTruthy()
+  })
+  // it('displays the basket component', async () => {
+  //   // getItems.mockImplementation(() => Promise.resolve(fakeAllItems))
+  //   render(
+  //     <Provider store={fakeStore}>
+  //       <BrowserRouter>
+  //         <Basket />
+  //       </BrowserRouter>
+  //     </Provider>
+  //   )
+  //   await userEvent.click(await screen.findByRole('button', { name: /-/i }))
+  //   await userEvent.click(await screen.findByRole('button', { name: /+/i }))
+
+  //   expect(screen.queryByRole('button', { name: /-/i })).not.toBeInTheDocument()
+  // })
+  // it('displays the basket', () => {
+  //   // const fakeDispatch = jest.fn()
+  //   const fakeSelector = jest.fn()
+  //   // getItems.mockReturnValue(fakeAllItems)
+  //   useSelector.mockReturnValue(fakeSelector)
+  //   // useDispatch.mockReturnValue(fakeDispatch)
+  //   render(<Basket />)
+
+  //   expect(fakeSelector).toHaveBeenCalledWith(fakeAllItems)
+  //   // expect(getItems.mock.calls[0][1]).toBe(fakeAllItems[1].id)
+  // })
+  // it('displays buttons based on state', async () => {
+  //   getItems.mockImplementation(() => Promise.resolve(fakeAllItems))
+  //   render(<Basket />)
+  //   await userEvent.click(screen.getByRole('button', { name: /-/i }))
+  //   await userEvent.click(screen.getByRole('button', { name: /+/i }))
+
+  //   expect(screen.queryByRole('button', { name: /-/i })).not.toBeInTheDocument()
+  // })
 })
