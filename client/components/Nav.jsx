@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import Update from './Update'
-import AuthNav from '../components/auth/auth-nav'
+import AuthNav from './AuthNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  // faUserSecret,
-  // faBinoculars,
   faMagnifyingGlassDollar,
   faCartShopping,
 } from '@fortawesome/free-solid-svg-icons'
