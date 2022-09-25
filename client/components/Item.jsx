@@ -24,7 +24,7 @@ function Item() {
         setItem(d)
       })
       .catch(logError)
-  }, [])
+  }, [itemData])
 
   function handleUpdate(itemId, price) {
     // api send the request to update the item price
@@ -41,7 +41,7 @@ function Item() {
       )}
 
       <div className="item-container">
-        {itemData.length && (
+        {itemData && (
           <div>
             {itemData.map((item) => (
               <ItemPrice
