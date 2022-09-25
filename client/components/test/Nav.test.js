@@ -7,7 +7,7 @@ import Nav from '../Nav'
 describe('<Nav />', () => {
   it('displays the basket button to select', () => {
     render(<Nav />, { wrapper: BrowserRouter })
-    const basketButton = screen.getByRole('link', { name: 'Basket' })
+    const basketButton = screen.getByRole('link', { name: 'My List ~' })
     expect(basketButton).toBeTruthy()
     expect(basketButton).toHaveAttribute('href', '/list')
   })

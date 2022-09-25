@@ -20,7 +20,7 @@ describe('getItems', () => {
   it('returns an array of item type', () => {
     expect.assertions(3)
     return db.getItems(testDb).then((items) => {
-      expect(items).toHaveLength(3)
+      expect(items).toHaveLength(10)
       expect(items[0]).toHaveProperty('item_name')
       expect(items[0].item_name).toBe('Milk')
     })
