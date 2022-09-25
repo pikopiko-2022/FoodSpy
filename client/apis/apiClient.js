@@ -16,7 +16,7 @@ export function getItem(id) {
 
 export function updateItemPrice(id, price) {
   return request
-    .patch(rootUrl + '/items/' + id)
+    .post(rootUrl + '/items/' + id)
     .send({ price: price })
     .then((res) => {
       return res.body

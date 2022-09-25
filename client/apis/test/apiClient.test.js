@@ -16,7 +16,7 @@ const allItems = [
 describe('updateItemPrice', () => {
   test('can update price of an item', () => {
     const scope = nock('http://localhost')
-      .patch('/api/v1/items/1')
+      .post('/api/v1/items/1')
       .reply(200, { ...allItems[0], price: 5.0 })
 
     return updateItemPrice(1).then((res) => {
