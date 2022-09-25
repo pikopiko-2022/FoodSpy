@@ -11,51 +11,61 @@ body {
 
 .nav {
   width: 100%;
-  max-height: 75px;
+  min-height: 75px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background-color: rgb(119, 143, 231);
+  padding: 20px 0 20px 0;
+}
+
+.nav-icons {
+  color: rgb(184, 255, 225);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.nav-logo {
+font-weight: bold;
 }
 
 .logo, a {
   color:white;
   font-size: 50pt;
   text-decoration: none;
-  margin: auto;
-  
 }
 
-.btn {
-  font-size: 15pt;
-  border-radius: 1rem;
-  background-color: white;
-  border: none;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  color: rgb(119, 143, 231);
-}
-
-.nav-btn {
-  margin-right: 300px;
+.nav-btns {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
-  // flex-direction: column;
-
-
+  gap: 3rem;
 }
 
-.nav-list-btn {
+.list-btn {
+  border-radius: 2rem;
+  border: none;
+  padding: 3px 20px 3px 20px;
+  background-color:rgb(184, 255, 225) ;
+}
+
+a.list {
+  font-size: 15pt;
+  color: black;
+}
+
+.login-btn .btn {
   font-size: 15pt;
   border-radius: 1rem;
-  background-color: white;
   border: none;
-  justify-content: center;
-  align-items: center;
-  color: rgb(119, 143, 231);
-  
-
+  background-color:rgb(184, 255, 225) ;
+  padding: 3px 20px 3px 20px;
 }
 
 // ------ ITEMS PAGE ------
@@ -138,7 +148,7 @@ footer {
   margin: auto;
   align-items: center;
   font-size: 7pt;
-  color:white;
+  color: rgb(184, 255, 225) ;
   bottom: 0;
   position:fixed;
 

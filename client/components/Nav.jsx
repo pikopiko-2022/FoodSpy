@@ -22,15 +22,12 @@ function Nav() {
         </div>
       </div>
       <div className="nav-btns">
-        <div className="list-btn">
-          <button>
-            <Link className="list" to="/list">
-              My List ~
-              {/* <FontAwesomeIcon icon={faMagnifyingGlassDollar} /> */}
-              <FontAwesomeIcon icon={faPencil} />
-            </Link>
-          </button>
-        </div>
+        <button className="list-btn">
+          <Link className="list" to="/list">
+            My List ~{/* <FontAwesomeIcon icon={faMagnifyingGlassDollar} /> */}
+            <FontAwesomeIcon icon={faPencil} />
+          </Link>
+        </button>
         <div className="login-btn">
           <AuthNav />
         </div>
