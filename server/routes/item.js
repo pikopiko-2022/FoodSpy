@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/:id', (req, res) => {
+router.patch('/:id', (req, res) => {
   const price = req.body.price
 
   db.updatePrice(req.params.id, price)
