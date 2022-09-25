@@ -102,7 +102,10 @@
     "singleQuote": true
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "coveragePathIgnorePatterns": [
+      "server/db/migrations"
+    ]
   },
   "browserslist": "> 2%, not dead"
 }
