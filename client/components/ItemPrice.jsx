@@ -28,6 +28,7 @@ function ItemPrice({ item, handleUpdate }) {
           name={`price_${item.itemPricesId}`}
           id={`Price_${item.itemPricesId}`}
           value={itemUpdate}
+          aria-label="price-input"
           onChange={handleInput}
         />
 
