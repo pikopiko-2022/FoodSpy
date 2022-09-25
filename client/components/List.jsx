@@ -42,7 +42,8 @@ function List() {
   return (
     <div className="overallContainer">
       <div className="listContainer">
-        <h2>Add items to your basket:</h2>
+        <h2>My Shopping List</h2>
+        <p>Click image to add to cart</p>
         <div>
           {list.map((item) => {
             return (
@@ -66,7 +67,6 @@ function List() {
         </div>
       </div>
       <div className="basketContainer">
-        <h2>Basket: </h2>
         <Basket basket={basket} setBasket={setBasket} />
       </div>
     </div>

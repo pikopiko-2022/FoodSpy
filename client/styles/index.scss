@@ -232,12 +232,14 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 0px 30px;
+  padding-left: 5px;
   position: absolute;
   right: 0;
 }
 
 .listContainer {
-  padding: 0px 20px;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
 
 .foodContainer {
@@ -276,6 +278,16 @@ footer {
   border-radius: 7px;
   border-color:  rgb(211, 241, 211);
   margin-left: 5px;
+}
+
+.smallMap {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 65px;
+  margin-bottom: 65px;
+  padding-right: 1px;
+  padding-left: 5px;
 }
 
 
