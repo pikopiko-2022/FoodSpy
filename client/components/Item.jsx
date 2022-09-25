@@ -13,17 +13,19 @@ function Item() {
   let { id } = useParams()
 
   useEffect(() => {
-    getItemData(id)
-      .then((d) => {
-        setItemData(d)
-      })
-      .catch(logError)
+    if (itemData.length === 0) {
+      getItemData(id)
+        .then((d) => {
+          setItemData(d)
+        })
+        .catch(logError)
 
-    getItem(id)
-      .then((d) => {
-        setItem(d)
-      })
-      .catch(logError)
+      getItem(id)
+        .then((d) => {
+          setItem(d)
+        })
+        .catch(logError)
+    }
   }, [itemData])
 
   function handleUpdate(itemId, price) {
