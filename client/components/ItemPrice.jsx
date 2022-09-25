@@ -6,6 +6,9 @@ function ItemPrice({ item, handleUpdate }) {
   const handleInput = (e) => {
     setItemUpdate(e.target.value)
   }
+  const localDate = (utcDate) => {
+    return new Date(utcDate).toLocaleString()
+  }
   return (
     <div className="item-result" key={item.id}>
       <img
@@ -16,7 +19,9 @@ function ItemPrice({ item, handleUpdate }) {
         height="200"
       />
       {item.location}
+
       <div> {item.description} </div>
+      <div>{localDate(item.update_at)}</div>
       <div className="item-price">
         {' '}
         Price ${Number(item.price).toFixed(2)}
