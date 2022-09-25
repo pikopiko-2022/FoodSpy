@@ -1,3 +1,12 @@
+# JV Review
+- no linter errors, nice!
+- wow, that's a ton of tests - also a lot of them are failing or have console logs - more work needed
+- this is a tricky domain as supermarkets work hard to make it difficult to compare their prices (brands, specials, loyalty discounts). You will likely also need to scrape the data from their websites as I doubt you can get an easy to use api.
+- it looks like you have made a db file for every route which has lead to some duplication (getItems in both db and list). I would orient your db functions around your db, not the routes they are used in
+- the same with your api client - getAllItems is the same in apiClient and basket
+- I suspect you can make your api calls more efficient - e.g. http://localhost:3000/item/9 calls both /api/v1/items/9 and /api/v1/item-data/9 - maybe all that data can be retrieved in one api call?
+- well done for giving google maps a go
+
 # Boilerplate: Fullstack with Sass
 
 ## Setup

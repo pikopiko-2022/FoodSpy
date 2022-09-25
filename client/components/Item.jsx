@@ -14,6 +14,7 @@ function Item() {
 
   useEffect(() => {
     if (itemData.length === 0) {
+      //could this be one api call?
       getItemData(id)
         .then((d) => {
           setItemData(d)
