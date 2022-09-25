@@ -11,7 +11,7 @@ body {
 
 .nav {
   width: 100%;
-  min-height: 75px;
+  min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -94,8 +94,7 @@ a.list {
   flex-direction: column;
   font-size: 15pt;
   gap: .5rem;
-  // margin-bottom: 40px;
-  // margin-top: 40px;
+
 }
 
 .store-image {
@@ -104,7 +103,6 @@ a.list {
   height: 200px;
   border-radius: 100px;
   padding: 3px;
-
 }
 
 .confirm-btn {
@@ -148,51 +146,59 @@ footer {
   margin: auto;
   align-items: center;
   font-size: 7pt;
-  color: rgb(184, 255, 225) ;
+  color: white;
   bottom: 0;
   position:fixed;
-
 }
 
-h3 {
-  color:rgb(119, 143, 231);
+//  ---- LANDING PAGE ----
+
+.landing-container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.landing-first-dropdown {
+  color: black;
   font-size: 30px;
-  margin-top: 90px;
+  margin-top: 50px;
+}
+
+.landing-second-dropdown {
+  color: black;
+  font-size: 30px;
+  margin-top: 70px;
 }
 
 .bargainSubmitButton{
-  background-color:goldenrod;
+  background-color:rgb(224, 167, 23);
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   border-radius: 10px;
   border:none;
   padding: 12px 28px;
-  align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 130px;
+  margin-top: 70px;
+  margin-bottom: 100px;
 }
 
-select {
+.form-select {
   background-color:rgb(119, 143, 231);
   padding:12px 30px;
   border-radius:10px;
   color:white;
   border: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto;
-  margin-top:30px;
   font-size: 20px;
-  
 }
 
 //-------- LIST PAGE ---------

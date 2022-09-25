@@ -35,45 +35,50 @@ export default function Home() {
 
   return (
     <>
-      <h3>1. Where are you?</h3>
-      <form>
-        <div>
-          <select>
-            <option value=""> ---Choose city--- </option>
-            <option value="auckland">Auckland</option>
-            <option value="napier">Napier</option>
-            <option value="wellington">Wellington</option>
-            <option value="christchurch">Christchurch</option>
-          </select>
-        </div>
-      </form>
-
-      <h3>2. What are you looking for?</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <select
-            id="item_id"
-            name="item_id"
-            value={item_id}
-            onChange={handleChange}
-          >
-            <option value=""> ---Choose item--- </option>
-            {items.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.item_name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {selectedItem.item_id && (
+      <div className="landing-container">
+        <h3 className="landing-first-dropdown">1. Where are you?</h3>
+        <form>
           <div>
-            <button className="bargainSubmitButton" onClick={handleSubmit}>
-              Show me the bargains!
-            </button>
+            <select className="form-select">
+              <option value=""> --- Choose city --- </option>
+              <option value="auckland">Auckland</option>
+              <option value="napier">Napier</option>
+              <option value="wellington">Wellington</option>
+              <option value="christchurch">Christchurch</option>
+            </select>
           </div>
-        )}
-      </form>
+        </form>
+
+        <h3 className="landing-second-dropdown">
+          2. What are you looking for?
+        </h3>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <select
+              className="form-select"
+              // id="item_id"
+              name="item_id"
+              value={item_id}
+              onChange={handleChange}
+            >
+              <option value=""> --- Choose item --- </option>
+              {items.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.item_name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {selectedItem.item_id && (
+            <div>
+              <button className="bargainSubmitButton" onClick={handleSubmit}>
+                Show me the bargains!
+              </button>
+            </div>
+          )}
+        </form>
+      </div>
     </>
   )
 }
