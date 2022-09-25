@@ -21,6 +21,9 @@
     "webpack": "webpack --config ./client/webpack.config.js",
     "knex": "knex --knexfile ./server/db/knexfile.js"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "babel": {
     "presets": [
       "@babel/preset-typescript",
@@ -51,7 +54,7 @@
     "jest-config": "^29.0.3",
     "jest-dom": "^4.0.0",
     "knex": "^2.1.0",
-    "pg": "^8.7.1",
+    "pg": "^8.8.0",
     "react-social-icons": "^5.14.0",
     "sqlite3": "^5.0.8",
     "superagent": "7.1.1"
