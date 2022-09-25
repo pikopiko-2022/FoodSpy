@@ -40,10 +40,12 @@ function List() {
   }
 
   return (
-    <div className="overallContainer">
-      <div className="listContainer">
-        <h2>My Shopping List</h2>
-        <p>Click image to add to cart</p>
+    <div>
+      <div>
+        {/* <div className="overallContainer">
+    <div className="listContainer"> */}
+        <h2 className="listHeading">My Shopping List</h2>
+        <p className="listHeading">Click image to add to my list</p>
         <div>
           {list.map((item) => {
             return (
@@ -55,12 +57,16 @@ function List() {
                 onKeyDown={(e) => handleSelect(e, item.id)}
                 tabIndex="0"
               >
-                <img
-                  className="listImage"
-                  src={item.image_url}
-                  alt={item.item_name}
-                />
-                <h3 className="listHeading">{item.item_name}</h3>
+                <div className="overallContainer">
+                  <div className="listContainer">
+                    <img
+                      className={['foodContainer', 'list-image'].join('')}
+                      src={item.image_url}
+                      alt={item.item_name}
+                    />
+                    <h3 className="listHeading">{item.item_name}</h3>
+                  </div>
+                </div>
               </div>
             )
           })}
