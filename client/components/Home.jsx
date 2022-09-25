@@ -34,6 +34,7 @@ export default function Home() {
   console.log('current items', selectedItem)
 
   return (
+    // Choose city just for demonstration purposes at this stage, as it would be too much data in the database to have multiple cities
     <>
       <h3>1. Where are you?</h3>
       <form>
