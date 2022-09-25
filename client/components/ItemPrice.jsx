@@ -19,7 +19,7 @@ function ItemPrice({ item, handleUpdate }) {
       <div> {item.description} </div>
       <div className="item-price">
         {' '}
-        Price ${item.price}
+        Price ${Number(item.price).toFixed(2)}
         <button className="confirm-btn">Confirm Price</button>
       </div>
       <div className="update-price">
