@@ -27,12 +27,12 @@ exports.seed = async function (knex) {
     {
       id: 4,
       item_name: 'Pasta',
-      description: '500g pasta',
+      description: '500g Penne pasta',
       image_url: '/images/pasta.jpg',
     },
     {
       id: 5,
-      item_name: 'Frozen Stirfry Vegetables',
+      item_name: 'Frozen Vegetables',
       description: '1kg frozen stirfry vegetbles',
       image_url: '/images/stirfry.jpg',
     },
