@@ -62,10 +62,15 @@ export default function Home() {
                 name="item_id"
                 value={item_id}
                 onChange={handleChange}
+                data-testid="select"
               >
                 <option value=""> --- Choose item --- </option>
                 {items.map((item) => (
-                  <option key={item.id} value={item.id}>
+                  <option
+                    data-testid="select-option"
+                    key={item.id}
+                    value={item.id}
+                  >
                     {item.item_name}
                   </option>
                 ))}
@@ -74,7 +79,11 @@ export default function Home() {
 
             {selectedItem.item_id && (
               <div>
-                <button className="bargainSubmitButton" onClick={handleSubmit}>
+                <button
+                  className="bargainSubmitButton"
+                  onClick={handleSubmit}
+                  data-testid="submit"
+                >
                   Show me the bargains!
                 </button>
               </div>
