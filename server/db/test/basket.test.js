@@ -20,7 +20,7 @@ describe('getAllItems', () => {
   it('returns an array of all items', () => {
     expect.assertions(3)
     return db.getAllItems(testDb).then((items) => {
-      expect(items).toHaveLength(9)
+      expect(items).toHaveLength(30)
       expect(items[0]).toHaveProperty('item_name')
       expect(items[0].item_name).toBe('Milk')
     })
