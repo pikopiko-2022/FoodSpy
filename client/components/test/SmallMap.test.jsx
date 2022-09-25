@@ -13,20 +13,27 @@ describe('<SmallMap/>', () => {
   })
 
   it('shows the loader', () => {
-    jest.spyOn(ReactGoogleMapsApi, 'useJsApiLoader').mockReturnValue({
+    jest.spyOn(ReactGoogleMapsApi, 'useLoadScript').mockReturnValue({
       isLoaded: false,
     })
     render(<SmallMap />)
     expect(screen.getByText(/loading/i)).toBeInTheDocument()
   })
   it('displays SmallMap', async () => {
-    jest.spyOn(ReactGoogleMapsApi, 'useJsApiLoader').mockReturnValue({
+    jest.spyOn(ReactGoogleMapsApi, 'useLoadScript').mockReturnValue({
       isLoaded: true,
     })
-    render(<SmallMap position={fakePosition} />)
-    const location = screen.findByText(fakePosition.lat)
-
-    expect(screen.findByRole('document')).toBeTruthy()
-    expect(location).not.toBeNull()
+    jest
+      .spyOn(ReactGoogleMapsApi, 'GoogleMap')
+      .mockImplementation((props) => <div>GoogleMap {props.children}</div>)
+    jest
+      .spyOn(ReactGoogleMapsApi, 'Marker')
+      .mockImplementation((props) => (
+        <div data-testid={props['data-testid']}>Marker</div>
+      ))
+    render(<SmallMap location={fakePosition} />)
+    const marker = screen.findByTestId('googleMarker')
+    expect(marker).toBeTruthy()
+    expect(location).toBeTruthy()
   })
 })

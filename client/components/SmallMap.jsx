@@ -30,7 +30,11 @@ function SmallMap({ location }) {
   return (
     <div className="map">
       <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
-        <Marker position={marker()} title={location} />
+        <Marker
+          data-testid="googleMarker"
+          position={marker()}
+          title={location}
+        />
       </GoogleMap>
     </div>
   )
