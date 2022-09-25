@@ -1,5 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+
+import SmallMap from './SmallMap'
 
 function Basket({ basket, setBasket }) {
   const allItems = useSelector((state) => {
@@ -46,6 +50,9 @@ function Basket({ basket, setBasket }) {
 
   return (
     <div>
+      <h2>
+        Cart <FontAwesomeIcon icon={faCartShopping} />
+      </h2>
       {Object.keys(basket || {}).map((itemId) => {
         return (
           <>
@@ -88,6 +95,9 @@ function Basket({ basket, setBasket }) {
             <p>
               <b>Total: $ {Number(bestPrice).toFixed(2)}</b>
             </p>
+            <div className="smallMap">
+              <SmallMap location={bestLocation} />
+            </div>
           </>
         )}
       </div>
