@@ -21,7 +21,6 @@ function ItemPrice({ item, handleUpdate }) {
       {item.location}
 
       <div> {item.description} </div>
-      <div>{localDate(item.update_at)}</div>
       <div className="item-price">
         {' '}
         Price ${Number(item.price).toFixed(2)}
@@ -42,6 +41,9 @@ function ItemPrice({ item, handleUpdate }) {
         >
           Update Price
         </button>
+      </div>
+      <div className="last-updated">
+        {localDate(item.update_at)}(Last updated)
       </div>
     </div>
   )
