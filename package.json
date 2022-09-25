@@ -52,6 +52,7 @@
     "jest-dom": "^4.0.0",
     "knex": "^2.1.0",
     "pg": "^8.7.1",
+    "react-social-icons": "^5.14.0",
     "sqlite3": "^5.0.8",
     "superagent": "7.1.1"
   },

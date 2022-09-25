@@ -11,7 +11,7 @@ body {
 
 .nav {
   width: 100%;
-  min-height: 75px;
+  min-height: 110px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -19,9 +19,9 @@ body {
   padding: 20px 0 20px 0;
 }
 
-.nav-icons {
-  color: rgb(184, 255, 225);
-}
+// .nav-icons {
+//   color: rgb(184, 255, 225);
+// }
 
 .logo {
   display: flex;
@@ -36,7 +36,7 @@ font-weight: bold;
 
 .logo, a {
   color:white;
-  font-size: 50pt;
+  font-size: 55pt;
   text-decoration: none;
 }
 
@@ -52,19 +52,22 @@ font-weight: bold;
   border-radius: 2rem;
   border: none;
   padding: 3px 20px 3px 20px;
-  background-color:rgb(184, 255, 225) ;
+  // background-color:rgb(184, 255, 225) ;
+  background-color:white;
 }
 
 a.list {
   font-size: 15pt;
-  color: black;
+  color: rgb(80, 78, 78);
 }
 
 .login-btn .btn {
   font-size: 15pt;
   border-radius: 1rem;
+  color: rgb(80, 78, 78);
   border: none;
-  background-color:rgb(184, 255, 225) ;
+ // background-color:rgb(184, 255, 225) ;
+ background-color:white;
   padding: 3px 20px 3px 20px;
 }
 
@@ -83,7 +86,7 @@ a.list {
   margin-top: 65px;
   margin-bottom: 65px;
   font-size: 30pt;
-  color:rgb(119, 143, 231);
+  color: black;
 }
 
 .item-result {
@@ -94,8 +97,7 @@ a.list {
   flex-direction: column;
   font-size: 15pt;
   gap: .5rem;
-  // margin-bottom: 40px;
-  // margin-top: 40px;
+
 }
 
 .store-image {
@@ -104,7 +106,6 @@ a.list {
   height: 200px;
   border-radius: 100px;
   padding: 3px;
-
 }
 
 .confirm-btn {
@@ -148,51 +149,70 @@ footer {
   margin: auto;
   align-items: center;
   font-size: 7pt;
-  color: rgb(184, 255, 225) ;
+  color: white;
   bottom: 0;
   position:fixed;
-
 }
 
-h3 {
-  color:rgb(119, 143, 231);
+//  ---- LANDING PAGE ----
+
+
+.landing-container {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  flex-direction: column;
+  background-image: url("../images/veg.jpeg");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.dropdowns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing-first-dropdown {
+  color: rgb(80, 78, 78);
   font-size: 30px;
-  margin-top: 90px;
+}
+
+.landing-second-dropdown {
+  color: rgb(80, 78, 78);
+  font-size: 30px;
 }
 
 .bargainSubmitButton{
-  background-color:goldenrod;
+  background-color:rgb(251, 146, 60);
   font-size: 20px;
+  font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   border-radius: 10px;
   border:none;
   padding: 12px 28px;
-  align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 130px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
-select {
+.form-select {
   background-color:rgb(119, 143, 231);
   padding:12px 30px;
   border-radius:10px;
   color:white;
   border: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto;
-  margin-top:30px;
+  margin-bottom: 100px;
   font-size: 20px;
-  
 }
 
 //-------- LIST PAGE ---------
