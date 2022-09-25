@@ -6,6 +6,9 @@ function ItemPrice({ item, handleUpdate }) {
   const handleInput = (e) => {
     setItemUpdate(e.target.value)
   }
+  const localDate = (utcDate) => {
+    return new Date(utcDate).toLocaleString()
+  }
   return (
     <div className="item-result" key={item.id}>
       <img
@@ -16,6 +19,7 @@ function ItemPrice({ item, handleUpdate }) {
         height="200"
       />
       {item.location}
+
       <div> {item.description} </div>
       <div className="item-price">
         {' '}
@@ -28,6 +32,7 @@ function ItemPrice({ item, handleUpdate }) {
           name={`price_${item.itemPricesId}`}
           id={`Price_${item.itemPricesId}`}
           value={itemUpdate}
+          aria-label="price-input"
           onChange={handleInput}
         />
 
@@ -37,6 +42,9 @@ function ItemPrice({ item, handleUpdate }) {
         >
           Update Price
         </button>
+      </div>
+      <div className="last-updated">
+        {localDate(item.update_at)}(Last updated)
       </div>
     </div>
   )
