@@ -49,7 +49,7 @@ describe('<Basket />', () => {
       </Provider>
     )
     const minusButton = screen.findByRole('button', { name: /-/i })
-    user.click(minusButton)
+    user.click(minusButton, { shiftKey: true })
     expect.assertions(2)
     expect(minusButton).toBeTruthy()
     expect(minusButton).not.toBeNull()
@@ -64,7 +64,7 @@ describe('<Basket />', () => {
       </Provider>
     )
     const plusButton = screen.findByRole('button', { name: '+' })
-    user.click(plusButton)
+    user.click(plusButton, { shiftKey: true })
     expect.assertions(2)
     expect(plusButton).toBeTruthy()
     expect(plusButton).not.toBeNull()
