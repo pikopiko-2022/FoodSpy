@@ -20,6 +20,5 @@ function getItem(id, db = connection) {
 function updatePrice(id, newPrice, db = connection) {
   return db('itemPrices')
     .update({ price: newPrice, update_at: new Date().toISOString() })
-    .update({ price: newPrice })
     .where('id', id)
 }

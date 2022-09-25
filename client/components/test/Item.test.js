@@ -39,8 +39,10 @@ const milkItem = {
 getItemData.mockImplementation(() => Promise.resolve(allMilkPricesByStore))
 getItem.mockImplementation(() => Promise.resolve(milkItem))
 
-ItemPrice.mockImplementation(() => (
-  <div data-testid="one-item">Test component</div>
+ItemPrice.mockImplementation((item) => (
+  <div data-testid="one-item" key={item.id}>
+    Test component
+  </div>
 ))
 
 Map.mockImplementation(() => <>Google map div</>)
