@@ -104,7 +104,7 @@ color:white;
   margin-top: 65px;
   margin-bottom: 30px;
   font-size: 30pt;
-  color: rgb(80, 78, 78;
+  color: rgb(80, 78, 78);
 }
 
 .item-result {
@@ -115,37 +115,45 @@ color:white;
   flex-direction: column;
   font-size: 15pt;
   gap: .5rem;
+}
 
+.item-location {
+  font-weight: bold;
+  color: rgb(80, 78, 78);
 }
 
 .store-image {
   border: 3px solid lightgray;
   width: 200px;
   height: 200px;
-  border-radius: 100px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 .confirm-btn {
 font-size: 12pt;
-background-color: rgb(211, 241, 211);
+background-color: rgb(80, 78, 78);
+color:white;
+border:rgb(80, 78, 78);
 margin-left: 5px;
 border-radius: 1rem;
-border-color:  rgb(211, 241, 211);
-
+padding:5px 10px 5px 10px;
 }
 
 .update-btn {
   font-size: 12pt;
-  background-color: rgb(251, 196, 185);
+  background-color: rgb(252, 153, 72);
+  color:white;
+  border:rgb(252, 153, 72);
   margin-left: 5px;
   border-radius: 1rem;
-  border-color: rgb(251, 196, 185);
+  padding:5px 10px 5px 10px;
 }
 
 .item-price {
   font-size: 19pt;
-  color: red;
+  color: rgb(80, 78, 78);
+  font-weight: bold;
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
@@ -170,6 +178,29 @@ footer {
   color: white;
   bottom: 0;
   position:fixed;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
 }
 
 //  ---- LANDING PAGE ----
@@ -249,11 +280,12 @@ footer {
 
 //-------- LIST PAGE ---------
 .listImage {
-  // border: 5px solid lightgrey;
-  width: 130px;
-  height: 130px;
+  border: 5px solid lightgrey;
   object-fit: contain;
   border-radius:10px;
+  width: 200px;
+  height: 200px;
+  padding: 3px;
 }
 
 .overallContainer {
@@ -313,15 +345,15 @@ footer {
 
 .minusButton {
   font-size: 8pt;
-  background-color: rgb(251, 196, 185);
   border-radius: 7px;
-  border-color: rgb(251, 196, 185);
   margin-left: 7px;
+  background-color: rgb(80, 78, 78);
+  color:white;
 }
 
 .plusButton {
   font-size: 8pt;
-  background-color: rgb(211, 241, 211);
+  border-color: rgb(80, 78, 78);
   border-radius: 7px;
   border-color:  rgb(211, 241, 211);
   margin-left: 5px;
@@ -341,7 +373,9 @@ footer {
   color:rgb(80, 78, 78);
 }
 
-
+.h1{
+  color:rgb(80, 78, 78);
+}
   
 
 
