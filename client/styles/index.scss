@@ -237,13 +237,18 @@ footer {
   padding:relative;
 }
 
+.form-select-second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .landing-first-dropdown {
   color: rgb(80, 78, 78);
   font-size: 30px;
   margin-top:10px;
   height:30px;
   cursor: pointer;
-
 }
 
 .landing-second-dropdown {
@@ -296,7 +301,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
   color: rgb(80, 78, 78);
 }
 
