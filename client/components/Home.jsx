@@ -62,7 +62,7 @@ export default function Home() {
             2. What are you looking for?
           </h3>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-select-second">
               <select
                 className="form-select"
                 name="item_id"
