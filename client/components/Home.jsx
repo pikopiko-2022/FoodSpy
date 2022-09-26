@@ -18,19 +18,17 @@ export default function Home() {
   //     })
   // }, [])
 
-  // function handleChange(e) {
-  //   setSelectedItem({
-  //     ...selectedItem,
-  //     [e.target.name]: e.target.value,
-  //   })
-  // }
+  function handleChange(e) {
+    setSelectedItem({
+      ...selectedItem,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   // function handleSubmit(e) {
   //   e.preventDefault()
   //   navigate(`/item/${item_id}`)
   // }
-
-  // console.log('current items', selectedItem)
 
   return (
     // Choose city just for demonstration purposes at this stage, as it would be too much data in the database to have multiple cities
@@ -99,6 +97,11 @@ export default function Home() {
               </div>
             )}
           </form> */}
+        </div>
+        <div className="home-tag-line">
+          <h2 className="home-tag-line">
+            A platform to share local prices on essential items
+          </h2>
         </div>
       </div>
     </>

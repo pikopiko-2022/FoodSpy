@@ -11,7 +11,7 @@ body {
 
 .nav {
   width: 100%;
-  max-height: 50px;
+  max-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -52,24 +52,25 @@ font-weight: bold;
   gap: 3rem;
 }
 
-
 .list-btn {
   border-radius: 2rem;
   border: none;
   padding: 3px 20px 3px 20px;
   // background-color:rgb(184, 255, 225) ;
   background-color:white;
+  cursor: pointer;
   }
 
   .list-btn:hover{
   background-color:rgb(80, 78, 78);
-     
   }
 
 
 a.list {
   font-size: 15pt;
   color: rgb(80, 78, 78);
+  cursor: pointer;
+
 }
 
 a.list:hover {
@@ -79,15 +80,15 @@ a.list:hover {
 .login-btn .btn {
   font-size: 15pt;
   border-radius: 1rem;
-  color: rgb(80, 78, 78);
+  color: white;
   border: none;
-  background-color:white;
+  background-color:rgb(80, 78, 78);
   padding: 3px 20px 3px 20px;
 }
 
 .login-btn .btn:hover {
-background-color:rgb(80, 78, 78);
-color:white;
+background-color:white;
+color:rgb(80, 78, 78);
 }
 // ------ ITEMS PAGE ------
 
@@ -131,13 +132,14 @@ color:white;
 }
 
 .confirm-btn {
-font-size: 12pt;
-background-color: rgb(80, 78, 78);
-color:white;
-border:rgb(80, 78, 78);
-margin-left: 5px;
-border-radius: 1rem;
-padding:5px 10px 5px 10px;
+  font-size: 12pt;
+  background-color: rgb(80, 78, 78);
+  color:white;
+  border:rgb(80, 78, 78);
+  margin-left: 5px;
+  border-radius: 1rem;
+  padding:5px 10px 5px 10px;
+  cursor: pointer;
 }
 
 .update-btn {
@@ -148,6 +150,7 @@ padding:5px 10px 5px 10px;
   margin-left: 5px;
   border-radius: 1rem;
   padding:5px 10px 5px 10px;
+  cursor: pointer;
 }
 
 .item-price {
@@ -165,6 +168,11 @@ padding:5px 10px 5px 10px;
   margin-bottom: 65px;
 }
 
+.last-updated{
+  font-size: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 // ---- FOOTER ----
 
 footer {
@@ -178,15 +186,18 @@ footer {
   color: white;
   bottom: 0;
   position:fixed;
+  gap: 1rem;
 }
 
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  padding: 10px;
+  font-size: 50px;
+  width: 10px;
+  height: 10px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
+  border-radius: 50%;
 }
 
 .fa:hover {
@@ -213,7 +224,7 @@ footer {
   align-items: center;
   // justify-content: center;
   padding-top: 7vh;
-  background-image: url("../images/veg.jpeg");
+  background-image: url("../images/veg-bg.jpg");
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -224,7 +235,12 @@ footer {
   justify-content: center;
   flex-direction: column;
   padding:relative;
-   
+}
+
+.form-select-second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .landing-first-dropdown {
@@ -232,14 +248,13 @@ footer {
   font-size: 30px;
   margin-top:10px;
   height:30px;
-  
+  cursor: pointer;
 }
 
 .landing-second-dropdown {
   color: rgb(80, 78, 78);
   font-size: 30px;
-  
-  
+  cursor: pointer;
 }
 
 .bargainSubmitButton{
@@ -257,13 +272,12 @@ footer {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 100px;
+  cursor: pointer;
 }
 
 .bargainSubmitButton:hover{
   background-color:white;
   color:rgb(80, 78, 78);
- 
-
 }
 
 .form-select {
@@ -276,6 +290,19 @@ footer {
   // margin: auto;
   margin-bottom: 30px;
   font-size: 20px;
+}
+
+.home-tag-line {
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: bold;
+  font-size: 30pt;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: rgb(80, 78, 78);
 }
 
 .search-form {
@@ -336,9 +363,7 @@ footer {
   padding: 15px;
   font-size: 30px;
   text-align: center;
-  
-
-
+  cursor: pointer;
 }
 
 .listHeading {
@@ -348,7 +373,7 @@ footer {
   justify-content: center;
   font-size: 20px;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .smallBasketText {
@@ -362,6 +387,7 @@ footer {
   margin-left: 7px;
   background-color: rgb(80, 78, 78);
   color:white;
+  cursor: pointer;
 }
 
 .plusButton {
@@ -370,6 +396,7 @@ footer {
   border-radius: 7px;
   border-color:  rgb(211, 241, 211);
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .smallMap {
@@ -389,6 +416,8 @@ footer {
 .h1{
   color:rgb(80, 78, 78);
 }
+
+
   
 
 
