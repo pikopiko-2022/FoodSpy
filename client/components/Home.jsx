@@ -1,36 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { getAllItems } from '../apis/apiClient'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import Search from './Search'
 
 export default function Home() {
-  const [items, setItems] = useState([])
-  const [selectedItem, setSelectedItem] = useState({})
-
-  const navigate = useNavigate()
-  const { item_id } = selectedItem
-
-  useEffect(() => {
-    getAllItems()
-      .then((item) => {
-        setItems(item)
-      })
-      .catch((err) => {
-        throw new Error(err.message)
-      })
-  }, [])
-
-  function handleChange(e) {
-    setSelectedItem({
-      ...selectedItem,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    navigate(`/item/${item_id}`)
-  }
-
   return (
     // Choose city just for demonstration purposes at this stage, as it would be too much data in the database to have multiple cities
     <>
@@ -61,40 +32,9 @@ export default function Home() {
           <h3 className="landing-second-dropdown">
             2. What are you looking for?
           </h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-select-second">
-              <select
-                className="form-select"
-                name="item_id"
-                value={item_id}
-                onChange={handleChange}
-                data-testid="select"
-              >
-                <option value=""> --- Choose item --- </option>
-                {items.map((item) => (
-                  <option
-                    data-testid="select-option"
-                    key={item.id}
-                    value={item.id}
-                  >
-                    {item.item_name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {selectedItem.item_id && (
-              <div>
-                <button
-                  className="bargainSubmitButton"
-                  onClick={handleSubmit}
-                  data-testid="submit"
-                >
-                  Show me the bargains!
-                </button>
-              </div>
-            )}
-          </form>
+          <div>
+            <Search />
+          </div>
         </div>
         <div className="home-tag-line">
           <h2 className="home-tag-line">
