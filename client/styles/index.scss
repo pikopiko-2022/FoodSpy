@@ -11,7 +11,7 @@ body {
 
 .nav {
   width: 100%;
-  max-height: 50px;
+  max-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -52,7 +52,6 @@ font-weight: bold;
   gap: 3rem;
 }
 
-
 .list-btn {
   border-radius: 2rem;
   border: none;
@@ -63,7 +62,6 @@ font-weight: bold;
 
   .list-btn:hover{
   background-color:rgb(80, 78, 78);
-     
   }
 
 
@@ -131,13 +129,13 @@ color:white;
 }
 
 .confirm-btn {
-font-size: 12pt;
-background-color: rgb(80, 78, 78);
-color:white;
-border:rgb(80, 78, 78);
-margin-left: 5px;
-border-radius: 1rem;
-padding:5px 10px 5px 10px;
+  font-size: 12pt;
+  background-color: rgb(80, 78, 78);
+  color:white;
+  border:rgb(80, 78, 78);
+  margin-left: 5px;
+  border-radius: 1rem;
+  padding:5px 10px 5px 10px;
 }
 
 .update-btn {
@@ -224,7 +222,6 @@ footer {
   justify-content: center;
   flex-direction: column;
   padding:relative;
-   
 }
 
 .landing-first-dropdown {
@@ -232,14 +229,11 @@ footer {
   font-size: 30px;
   margin-top:10px;
   height:30px;
-  
 }
 
 .landing-second-dropdown {
   color: rgb(80, 78, 78);
   font-size: 30px;
-  
-  
 }
 
 .bargainSubmitButton{
@@ -262,8 +256,6 @@ footer {
 .bargainSubmitButton:hover{
   background-color:white;
   color:rgb(80, 78, 78);
- 
-
 }
 
 .form-select {
@@ -276,6 +268,19 @@ footer {
   // margin: auto;
   margin-bottom: 30px;
   font-size: 20px;
+}
+
+.home-tag-line {
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: bold;
+  font-size: 30pt;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  color: rgb(80, 78, 78);
 }
 
 //-------- LIST PAGE ---------
@@ -323,9 +328,6 @@ footer {
   padding: 15px;
   font-size: 30px;
   text-align: center;
-  
-
-
 }
 
 .listHeading {
