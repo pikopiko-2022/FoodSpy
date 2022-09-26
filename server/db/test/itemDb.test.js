@@ -41,12 +41,11 @@ describe('update Item', () => {
     }
     return db
       .updatePrice(1, fakeData.price, testDb)
-      .then((item) => {
-        console.log(item)
+      .then(() => {
         return testDb('itemPrices').select()
       })
       .then((itemPrices) => {
-        console.log(itemPrices[1])
+        // console.log(itemPrices[1])
         expect(itemPrices[1].item_id).toBe(1)
         expect(itemPrices[1].price).toBe(3.84)
       })
