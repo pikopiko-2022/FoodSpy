@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import SmallMap from './SmallMap'
 
@@ -50,9 +49,7 @@ function Basket({ basket, setBasket }) {
 
   return (
     <div>
-      <h2>
-        Cart <FontAwesomeIcon icon={faCartShopping} />
-      </h2>
+      <h2>Total cost:</h2>
       {Object.keys(basket || {}).map((itemId) => {
         return (
           <div key={itemId}>
