@@ -21,7 +21,6 @@ function titleCase(str) {
 
 function Search() {
   const [form, setForm] = useState(initialData)
-
   const list = useSelector((state) => {
     return state.list
   })
@@ -40,12 +39,16 @@ function Search() {
   const handleSubmit = (event) => {
     event.preventDefault()
     const item = list.find((el) => el.item_name == titleCase(form.search))
-    getItemByName(item.item_name)
-    navigate(`/item/${item.id}`)
+    if (typeof item === 'object' && item !== null) {
+      getItemByName(item.item_name)
+      navigate(`/item/${item.id}`)
+    } else {
+      navigate(`/items`)
+    }
   }
 
   return (
-    <div>
+    <div className="searchContainer">
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
           <input
@@ -54,10 +57,10 @@ function Search() {
             name="search"
             type="text"
             onChange={handleChange}
-            className="search-form"
+            className="searchForm"
           />
+          <button className="searchButton">Search</button>
         </label>
-        <button className="bargainSubmitButton">Show me the bargains!</button>
       </form>
     </div>
   )

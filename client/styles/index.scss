@@ -257,29 +257,6 @@ footer {
   cursor: pointer;
 }
 
-.bargainSubmitButton{
-  background-color:rgb(252, 153, 72);
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  border-radius: 10px;
-  border:none;
-  padding: 12px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  cursor: pointer;
-}
-
-.bargainSubmitButton:hover{
-  background-color:white;
-  color:rgb(80, 78, 78);
-}
-
 .form-select {
   background-color: rgb(252, 153, 72);
   padding:12px 30px;
@@ -305,17 +282,42 @@ footer {
   color: rgb(80, 78, 78);
 }
 
-.search-form {
+.searchButton{
+  background-color:rgb(252, 153, 72);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  border-radius: 10px;
+  border:none;
+  padding: 6px 20px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.searchButton:hover{
+  background-color:white;
+  color:rgb(80, 78, 78);
+}
+
+.searchForm {
   background-color: white;
   padding: 5px 5px;
   border-radius:10px;
   color: rgb(80, 78, 78);
   border: solid 1px rgb(80, 78, 78);
-  display: flex;
-  // margin: auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-left: 30px;
   font-size: 20px;
+}
+
+.searchContainer{
+  display: flex;
 }
 
 //-------- LIST PAGE ---------
@@ -415,6 +417,19 @@ footer {
 
 .h1{
   color:rgb(80, 78, 78);
+}
+
+//---------SEARCH RESULTS------------
+
+.h3-heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 20pt;
+  color: rgb(80, 78, 78);
 }
 
 
