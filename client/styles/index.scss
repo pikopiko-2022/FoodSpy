@@ -58,6 +58,7 @@ font-weight: bold;
   padding: 3px 20px 3px 20px;
   // background-color:rgb(184, 255, 225) ;
   background-color:white;
+  cursor: pointer;
   }
 
   .list-btn:hover{
@@ -68,6 +69,8 @@ font-weight: bold;
 a.list {
   font-size: 15pt;
   color: rgb(80, 78, 78);
+  cursor: pointer;
+
 }
 
 a.list:hover {
@@ -136,6 +139,7 @@ color:rgb(80, 78, 78);
   margin-left: 5px;
   border-radius: 1rem;
   padding:5px 10px 5px 10px;
+  cursor: pointer;
 }
 
 .update-btn {
@@ -146,6 +150,7 @@ color:rgb(80, 78, 78);
   margin-left: 5px;
   border-radius: 1rem;
   padding:5px 10px 5px 10px;
+  cursor: pointer;
 }
 
 .item-price {
@@ -181,6 +186,7 @@ footer {
   color: white;
   bottom: 0;
   position:fixed;
+  gap: 1rem;
 }
 
 .fa {
@@ -218,7 +224,7 @@ footer {
   align-items: center;
   // justify-content: center;
   padding-top: 7vh;
-  background-image: url("../images/veg.jpeg");
+  background-image: url("../images/veg-bg.jpg");
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -236,11 +242,14 @@ footer {
   font-size: 30px;
   margin-top:10px;
   height:30px;
+  cursor: pointer;
+
 }
 
 .landing-second-dropdown {
   color: rgb(80, 78, 78);
   font-size: 30px;
+  cursor: pointer;
 }
 
 .bargainSubmitButton{
@@ -258,7 +267,7 @@ footer {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 100px;
-  
+  cursor: pointer;
 }
 
 .bargainSubmitButton:hover{
@@ -336,6 +345,7 @@ footer {
   padding: 15px;
   font-size: 30px;
   text-align: center;
+  cursor: pointer;
 }
 
 .listHeading {
@@ -359,6 +369,7 @@ footer {
   margin-left: 7px;
   background-color: rgb(80, 78, 78);
   color:white;
+  cursor: pointer;
 }
 
 .plusButton {
@@ -367,6 +378,7 @@ footer {
   border-radius: 7px;
   border-color:  rgb(211, 241, 211);
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .smallMap {
