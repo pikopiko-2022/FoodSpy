@@ -15,7 +15,7 @@ exports.seed = async function (knex) {
     {
       id: 2,
       item_name: 'Eggs',
-      description: '12 Eggs, Tray',
+      description: 'A dozen eggs',
       image_url: '/images/eggs.jpeg',
     },
     {
@@ -33,7 +33,7 @@ exports.seed = async function (knex) {
     {
       id: 5,
       item_name: 'Frozen Vegetables',
-      description: '1kg frozen stirfry vegetbles',
+      description: '1kg frozen stirfry vegetables',
       image_url: '/images/stirfry.jpg',
     },
     {
