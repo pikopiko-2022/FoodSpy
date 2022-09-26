@@ -31,8 +31,6 @@ export default function Home() {
     navigate(`/item/${item_id}`)
   }
 
-  console.log('current items', selectedItem)
-
   return (
     // Choose city just for demonstration purposes at this stage, as it would be too much data in the database to have multiple cities
     <>
