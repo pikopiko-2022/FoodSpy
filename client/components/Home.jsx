@@ -98,7 +98,7 @@ export default function Home() {
         </div>
         <div className="home-tag-line">
           <h2 className="home-tag-line">
-            A platform to share local prices on essential items
+            Explore and share local prices on essential items
           </h2>
         </div>
       </div>
