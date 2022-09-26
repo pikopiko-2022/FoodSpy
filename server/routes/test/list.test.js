@@ -1,8 +1,8 @@
 const request = require('supertest')
 const server = require('../../server')
 
-const { getItems } = require('../../db/list')
-jest.mock('../../db/list')
+const { getItems } = require('../../db/item')
+jest.mock('../../db/item')
 
 const getItemsMockData = [
   {
