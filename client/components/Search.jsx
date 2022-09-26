@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
-import { getList } from '../actions/list'
 import { getItemByName } from '../apis/search'
+import { getList } from '../actions/list'
 
 const initialData = {
   search: '',
 }
 
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    .join(' ')
+}
+
 function Search() {
+  const [form, setForm] = useState(initialData)
+
   const list = useSelector((state) => {
     return state.list
   })
+
   const dispatch = useDispatch()
-  const [search, setSearch] = useState('')
-  const [form, setForm] = useState(initialData)
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(getList())
@@ -24,27 +37,15 @@ function Search() {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  let item = ''
-
   const handleSubmit = (event) => {
     event.preventDefault()
-    // getItemByName(form)
-    //   .then((newSearch) => {
-    //     setSearch(newSearch)
-    //     setForm(initialData)
-    //   })
-    //   .catch((err) => {
-    //     console.error(err.message)
-    //   })
-    item = list.find((el) => el.item_name == form)
-    console.log(form)
+    const item = list.find((el) => el.item_name == titleCase(form.search))
+    getItemByName(item.item_name)
+    navigate(`/item/${item.id}`)
   }
-
-  console.log(search)
 
   return (
     <div>
-      <h2>Search for item</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
           <input
@@ -53,25 +54,11 @@ function Search() {
             name="search"
             type="text"
             onChange={handleChange}
+            className="search-form"
           />
         </label>
-        <button>Search</button>
+        <button className="bargainSubmitButton">Show me the bargains!</button>
       </form>
-      <div></div>
-      {/* <div>
-        {list.map((item) => {
-          return (
-            <div key={item.id}>
-              <img
-                className="listImage"
-                src={item.image_url}
-                alt={item.item_name}
-              />
-              <h3>{item.item_name}</h3>
-            </div>
-          )
-        })}
-      </div> */}
     </div>
   )
 }

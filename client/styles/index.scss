@@ -258,7 +258,7 @@ footer {
 }
 
 .bargainSubmitButton{
-  background-color:rgb(80, 78, 78);
+  background-color:rgb(252, 153, 72);
   font-size: 20px;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -281,10 +281,10 @@ footer {
 }
 
 .form-select {
-  background-color:rgb(252, 153, 72);
+  background-color: rgb(252, 153, 72);
   padding:12px 30px;
   border-radius:10px;
-  color:white;
+  color: white;
   border: none;
   display: flex;
   // margin: auto;
@@ -303,6 +303,19 @@ footer {
   justify-content: center;
   margin-top: 20px;
   color: rgb(80, 78, 78);
+}
+
+.search-form {
+  background-color: white;
+  padding: 5px 5px;
+  border-radius:10px;
+  color: rgb(80, 78, 78);
+  border: solid 1px rgb(80, 78, 78);
+  display: flex;
+  // margin: auto;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 20px;
 }
 
 //-------- LIST PAGE ---------
