@@ -1,37 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import { getAllItems } from '../apis/apiClient'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import Search from './Search'
 
 export default function Home() {
-  const [items, setItems] = useState([])
-  const [selectedItem, setSelectedItem] = useState({})
+  // const [items, setItems] = useState([])
+  // const [selectedItem, setSelectedItem] = useState({})
 
-  const navigate = useNavigate()
-  const { item_id } = selectedItem
+  // const navigate = useNavigate()
+  // const { item_id } = selectedItem
 
-  useEffect(() => {
-    getAllItems()
-      .then((item) => {
-        setItems(item)
-      })
-      .catch((err) => {
-        throw new Error(err.message)
-      })
-  }, [])
+  // useEffect(() => {
+  //   getAllItems()
+  //     .then((item) => {
+  //       setItems(item)
+  //     })
+  //     .catch((err) => {
+  //       throw new Error(err.message)
+  //     })
+  // }, [])
 
-  function handleChange(e) {
-    setSelectedItem({
-      ...selectedItem,
-      [e.target.name]: e.target.value,
-    })
-  }
+  // function handleChange(e) {
+  //   setSelectedItem({
+  //     ...selectedItem,
+  //     [e.target.name]: e.target.value,
+  //   })
+  // }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    navigate(`/item/${item_id}`)
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault()
+  //   navigate(`/item/${item_id}`)
+  // }
 
-  console.log('current items', selectedItem)
+  // console.log('current items', selectedItem)
 
   return (
     // Choose city just for demonstration purposes at this stage, as it would be too much data in the database to have multiple cities
@@ -63,7 +62,10 @@ export default function Home() {
           <h3 className="landing-second-dropdown">
             2. What are you looking for?
           </h3>
-          <form onSubmit={handleSubmit}>
+          <div>
+            <Search />
+          </div>
+          {/* <form onSubmit={handleSubmit}>
             <div>
               <select
                 className="form-select"
@@ -96,7 +98,7 @@ export default function Home() {
                 </button>
               </div>
             )}
-          </form>
+          </form> */}
         </div>
       </div>
     </>
