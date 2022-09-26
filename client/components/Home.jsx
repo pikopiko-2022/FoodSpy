@@ -80,14 +80,15 @@ export default function Home() {
                 ))}
               </select>
             </div>
-
-            {selectedItem.item_id && (
-              <div>
-                <button className="bargainSubmitButton" onClick={handleSubmit}>
-                  Show me the bargains!
-                </button>
-              </div>
-            )}
+            <div style={{'marginTop': '60px'}}>
+              {selectedItem.item_id && (
+                
+                  <button className="bargainSubmitButton" onClick={handleSubmit}>
+                    Show me the bargains!
+                  </button>
+                
+              )}
+            </div>
           </form>
         </div>
       </div>
