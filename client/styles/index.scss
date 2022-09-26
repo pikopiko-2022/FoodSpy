@@ -77,15 +77,15 @@ a.list:hover {
 .login-btn .btn {
   font-size: 15pt;
   border-radius: 1rem;
-  color: rgb(80, 78, 78);
+  color: white;
   border: none;
-  background-color:white;
+  background-color:rgb(80, 78, 78);
   padding: 3px 20px 3px 20px;
 }
 
 .login-btn .btn:hover {
-background-color:rgb(80, 78, 78);
-color:white;
+background-color:white;
+color:rgb(80, 78, 78);
 }
 // ------ ITEMS PAGE ------
 
@@ -163,6 +163,11 @@ color:white;
   margin-bottom: 65px;
 }
 
+.last-updated{
+  font-size: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 // ---- FOOTER ----
 
 footer {
@@ -179,12 +184,14 @@ footer {
 }
 
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  padding: 10px;
+  font-size: 50px;
+  width: 10px;
+  height: 10px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
+  border-radius: 50%;
 }
 
 .fa:hover {
@@ -251,6 +258,7 @@ footer {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 100px;
+  
 }
 
 .bargainSubmitButton:hover{
@@ -378,6 +386,8 @@ footer {
 .h1{
   color:rgb(80, 78, 78);
 }
+
+
   
 
 
