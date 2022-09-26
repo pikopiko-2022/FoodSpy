@@ -8,6 +8,16 @@ const initialData = {
   search: '',
 }
 
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    .join(' ')
+}
+
 function Search() {
   const list = useSelector((state) => {
     return state.list
@@ -24,24 +34,24 @@ function Search() {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  let item = ''
+  let item = {}
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // getItemByName(form)
-    //   .then((newSearch) => {
-    //     setSearch(newSearch)
-    //     setForm(initialData)
-    //   })
-    //   .catch((err) => {
-    //     console.error(err.message)
-    //   })
-    item = list.find((el) => el.item_name == form.search)
-    console.log(form)
-    console.log(item)
+    item = list.find((el) => el.item_name == titleCase(form.search))
+    getItemByName(item.item_name)
+      .then((newSearch) => {
+        setSearch(newSearch)
+        setForm(initialData)
+      })
+      .catch((err) => {
+        console.error(err.message)
+      })
   }
 
-  console.log(search)
+  const result = search[0]
+  const itemName = { result }
+  console.log(itemName)
 
   return (
     <div>
@@ -58,7 +68,16 @@ function Search() {
         </label>
         <button>Search</button>
       </form>
-      <div></div>
+      <div>
+        {Object.keys(result || {}).map((itemId) => {
+          return (
+            <div key={itemId}>
+              <p>{result[itemId].item_name}</p>
+              <p>Description: {result[itemId].description}</p>
+            </div>
+          )
+        })}
+      </div>
       {/* <div>
         {list.map((item) => {
           return (
