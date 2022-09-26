@@ -36,8 +36,9 @@ function Search() {
     //   .catch((err) => {
     //     console.error(err.message)
     //   })
-    item = list.find((el) => el.item_name == form)
+    item = list.find((el) => el.item_name == form.search)
     console.log(form)
+    console.log(item)
   }
 
   console.log(search)
