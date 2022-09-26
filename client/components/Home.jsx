@@ -67,28 +67,35 @@ export default function Home() {
             <div>
               <select
                 className="form-select"
-                // id="item_id"
                 name="item_id"
                 value={item_id}
                 onChange={handleChange}
+                data-testid="select"
               >
                 <option value=""> --- Choose item --- </option>
                 {items.map((item) => (
-                  <option key={item.id} value={item.id}>
+                  <option
+                    data-testid="select-option"
+                    key={item.id}
+                    value={item.id}
+                  >
                     {item.item_name}
                   </option>
                 ))}
               </select>
             </div>
-            <div style={{'marginTop': '60px'}}>
-              {selectedItem.item_id && (
-                
-                  <button className="bargainSubmitButton" onClick={handleSubmit}>
-                    Show me the bargains!
-                  </button>
-                
-              )}
-            </div>
+
+            {selectedItem.item_id && (
+              <div>
+                <button
+                  className="bargainSubmitButton"
+                  onClick={handleSubmit}
+                  data-testid="submit"
+                >
+                  Show me the bargains!
+                </button>
+              </div>
+            )}
           </form>
         </div>
       </div>

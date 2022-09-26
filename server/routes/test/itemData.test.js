@@ -35,13 +35,13 @@ describe('GET /api/v1/item-data/:id/', () => {
   it('should return status 500 and an error message on failure', () => {
     expect.assertions(2)
     getItemData.mockImplementation(() =>
-      Promise.reject(new Error('Server error'))
+      Promise.reject(new Error('Something went wrong'))
     )
     return request(server)
       .get('/api/v1/item-data/:id/')
       .then((res) => {
         expect(res.status).toBe(500)
-        expect(res.text).toContain('Server error')
+        expect(res.text).toContain('Something went wrong')
       })
   })
 })

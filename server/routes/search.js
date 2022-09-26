@@ -1,11 +1,12 @@
 const express = require('express')
 
-const db = require('../db/item')
+const db = require('../db/search')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getItems()
+  const itemName = req.query.name
+  db.getItemsByName(itemName)
     .then((results) => {
       res.json(results)
     })

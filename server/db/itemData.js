@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-const config = require('./knexfile').development
-const connection = require('knex')(config)
+const connection = require('./connection')
 
 module.exports = {
   getItemData,

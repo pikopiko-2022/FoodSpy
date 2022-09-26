@@ -52,9 +52,9 @@ function Basket({ basket, setBasket }) {
       <h2>Total cost:</h2>
       {Object.keys(basket || {}).map((itemId) => {
         return (
-          <>
+          <div key={itemId}>
             <p>{basket[itemId].name}</p>
-            <p className="smallBasketText" key={itemId}>
+            <p className="smallBasketText">
               Item count: {basket[itemId].quantity}
               <button
                 className="minusButton"
@@ -81,7 +81,7 @@ function Basket({ basket, setBasket }) {
                 +
               </button>
             </p>
-          </>
+          </div>
         )
       })}
       <div>

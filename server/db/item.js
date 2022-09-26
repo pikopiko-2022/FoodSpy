@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const config = require('./knexfile').development
-const knex = require('knex')
-const connection = knex(config)
+const connection = require('./connection')
 
 module.exports = {
   getItems,
@@ -20,6 +18,5 @@ function getItem(id, db = connection) {
 function updatePrice(id, newPrice, db = connection) {
   return db('itemPrices')
     .update({ price: newPrice, update_at: new Date().toISOString() })
-    .update({ price: newPrice })
     .where('id', id)
 }

@@ -3,11 +3,9 @@ import '@testing-library/jest-dom'
 import { screen, render } from '@testing-library/react'
 import * as ReactGoogleMapsApi from '@react-google-maps/api'
 
-import SmallMap from '../SmallMap'
+import Map from '../Map'
 
-const fakePosition = { lat: -36.85836, lng: 174.7488 }
-
-describe('<SmallMap/>', () => {
+describe('<Map/>', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
@@ -16,10 +14,10 @@ describe('<SmallMap/>', () => {
     jest.spyOn(ReactGoogleMapsApi, 'useLoadScript').mockReturnValue({
       isLoaded: false,
     })
-    render(<SmallMap />)
+    render(<Map />)
     expect(screen.getByText(/loading/i)).toBeInTheDocument()
   })
-  it('displays SmallMap', async () => {
+  it('displays Map', async () => {
     jest.spyOn(ReactGoogleMapsApi, 'useLoadScript').mockReturnValue({
       isLoaded: true,
     })
@@ -31,9 +29,8 @@ describe('<SmallMap/>', () => {
       .mockImplementation((props) => (
         <div data-testid={props['data-testid']}>Marker</div>
       ))
-    render(<SmallMap location={fakePosition} />)
-    const marker = screen.findByTestId('googleMarker')
-    expect(marker).toBeTruthy()
-    expect(location).toBeTruthy()
+    render(<Map />)
+    const map = screen.findByTestId('googleMap')
+    expect(map).toBeTruthy()
   })
 })

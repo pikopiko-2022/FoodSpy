@@ -4,41 +4,43 @@ import Map from './Map'
 import { getItemData, getItem, updateItemPrice } from '../apis/apiClient'
 import ItemPrice from './ItemPrice'
 
+const logError = (err) => console.log(err.message)
+
 function Item() {
   const [item, setItem] = useState('')
   const [itemData, setItemData] = useState([])
 
   let { id } = useParams()
+
   useEffect(() => {
     if (itemData.length === 0) {
       getItemData(id)
         .then((d) => {
-          console.log(d)
           setItemData(d)
         })
-        .catch((err) => {
-          console.log(err)
-        })
+        .catch(logError)
+
       getItem(id)
         .then((d) => {
           setItem(d)
         })
-        .catch((err) => {
-          console.log(err)
-        })
+        .catch(logError)
     }
   }, [itemData])
 
   function handleUpdate(itemId, price) {
     // api send the request to update the item price
-    //e.preventDefault()
     updateItemPrice(itemId, price)
     setItemData([])
   }
 
   return (
     <>
-      {item && <h1 className="item-title">Prices for {item.item_name}</h1>}
+      {item && (
+        <h1 className="item-title" data-testid="main-heading">
+          Prices for {item.item_name}
+        </h1>
+      )}
 
       <div className="item-container">
         {itemData && (
@@ -53,6 +55,7 @@ function Item() {
           </div>
         )}
       </div>
+
       <section className="map-section">
         <Map />
       </section>
