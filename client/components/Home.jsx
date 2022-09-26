@@ -42,11 +42,20 @@ export default function Home() {
           <form>
             <div>
               <select className="form-select">
-                <option value=""> --- Choose city --- </option>
+                <option value=""> ---Choose city--- </option>
                 <option value="auckland">Auckland</option>
+                <option value="tauranga">Tauranga</option>
+                <option value="rotorua">Rotorua</option>
+                <option value="taupo">Taupo</option>
+                <option value="hastings">Hastings</option>
                 <option value="napier">Napier</option>
+                <option value="whanganui">Whanganui</option>
+                <option value="palmerston north">Palmerston North</option>
                 <option value="wellington">Wellington</option>
+                <option value="nelson">Nelson</option>
                 <option value="christchurch">Christchurch</option>
+                <option value="dunedin">Dunedin</option>
+                <option value="queenstown">Queenstown</option>
               </select>
             </div>
           </form>
@@ -58,7 +67,6 @@ export default function Home() {
             <div>
               <select
                 className="form-select"
-                // id="item_id"
                 name="item_id"
                 value={item_id}
                 onChange={handleChange}

@@ -9,7 +9,8 @@ const containerStyle = {
 function Map() {
   const center = useMemo(() => ({ lat: -36.85836, lng: 174.7488 }), [])
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+    // googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: 'AIzaSyDT7qzA9fnt0X3JoHsM7a31RhJLecaEfxg',
   })
 
   if (!isLoaded) return <div>Loading...</div>

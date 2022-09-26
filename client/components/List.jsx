@@ -40,36 +40,38 @@ function List() {
   }
 
   return (
-    <div className="overallContainer">
-      <div className="listContainer">
-        <h2>My Shopping List</h2>
-        <p>Click image to add to cart</p>
-        <div>
-          {list.map((item) => {
-            return (
-              <div
-                key={item.id}
-                className="foodContainer"
-                role="button"
-                onClick={() => handleClick(item.id)}
-                onKeyDown={(e) => handleSelect(e, item.id)}
-                tabIndex="0"
-              >
-                <img
-                  className="listImage"
-                  src={item.image_url}
-                  alt={item.item_name}
-                />
-                <h3 className="listHeading">{item.item_name}</h3>
-              </div>
-            )
-          })}
-        </div>
-      </div>
+    <>
+      <h2 className="item-title">My Shopping List</h2>
+      <p className="listHeading">Click item to add to list</p>
+
       <div className="basketContainer">
         <Basket basket={basket} setBasket={setBasket} />
       </div>
-    </div>
+
+      <div className="overallContainer">
+        {/* <div> */}
+        {list.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className="foodContainer"
+              role="button"
+              onClick={() => handleClick(item.id)}
+              onKeyDown={(e) => handleSelect(e, item.id)}
+              tabIndex="0"
+            >
+              <img
+                className="listImage"
+                src={item.image_url}
+                alt={item.item_name}
+              />
+              <h3 className="listHeading">{item.item_name}</h3>
+            </div>
+          )
+        })}
+        {/* </div> */}
+      </div>
+    </>
   )
 }
 
