@@ -45,7 +45,7 @@ function Search() {
   }
 
   return (
-    <div>
+    <div className="search-container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
           <input
@@ -57,7 +57,7 @@ function Search() {
             className="search-form"
           />
         </label>
-        <button className="bargainSubmitButton">Show me the bargains!</button>
+        <button className="search-item">Search</button>
       </form>
     </div>
   )
