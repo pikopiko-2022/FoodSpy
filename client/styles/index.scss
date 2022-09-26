@@ -19,8 +19,25 @@ body {
   padding: 20px 0 20px 0;
 }
 
-// .nav-icons {
-//   // color: rgb(184, 255, 225);
+.search-container {
+  display: flex;
+}
+
+.search-bar {
+  display: flex;
+}
+
+// .search-form {
+//   background-color: white;
+//   padding: 5px 5px;
+//   border-radius:10px;
+//   color: rgb(80, 78, 78);
+//   border: solid 1px rgb(80, 78, 78);
+//   display: flex;
+//   // margin: auto;
+//   margin-bottom: 30px;
+//   margin-left: 30px;
+//   font-size: 20px;
 // }
 
 .logo {
@@ -254,7 +271,37 @@ footer {
 .landing-second-dropdown {
   color: rgb(80, 78, 78);
   font-size: 30px;
+  align-items: center;
   cursor: pointer;
+}
+
+h1 {
+  color: rgb(80, 78, 78);
+}
+
+
+
+.bargainSubmitButton{
+  background-color:rgb(80, 78, 78);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  border-radius: 10px;
+  border:none;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.bargainSubmitButton:hover{
+  background-color:white;
+  color:rgb(80, 78, 78);
 }
 
 .form-select {
@@ -282,38 +329,23 @@ footer {
   color: rgb(80, 78, 78);
 }
 
-.searchButton{
-  background-color:rgb(252, 153, 72);
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  border-radius: 10px;
-  border:none;
-  padding: 6px 20px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.searchButton:hover{
-  background-color:white;
-  color:rgb(80, 78, 78);
-}
-
-.searchForm {
-  background-color: white;
-  padding: 5px 5px;
-  border-radius:10px;
-  color: rgb(80, 78, 78);
-  border: solid 1px rgb(80, 78, 78);
-  margin-bottom: 20px;
-  margin-left: 30px;
-  font-size: 20px;
+.createList {
+  background-color: rgb(80, 78, 78);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 28px;
+    // display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    cursor: pointer;
 }
 
 .searchContainer{

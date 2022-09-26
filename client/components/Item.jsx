@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import Map from './Map'
 import { getItemData, getItem, updateItemPrice } from '../apis/apiClient'
 import ItemPrice from './ItemPrice'
@@ -36,24 +36,31 @@ function Item() {
 
   return (
     <>
-      {item && (
-        <h1 className="item-title" data-testid="main-heading">
-          Prices for {item.item_name}
-        </h1>
-      )}
-
-      <div className="item-container">
-        {itemData && (
-          <div>
-            {itemData.map((item) => (
-              <ItemPrice
-                key={item.id}
-                item={item}
-                handleUpdate={handleUpdate}
-              />
-            ))}
-          </div>
+      <div>
+        <Link className="createList" to="/list">
+          Create shopping list
+        </Link>
+      </div>
+      <div>
+        {item && (
+          <h1 className="item-title" data-testid="main-heading">
+            Prices for {item.item_name}
+          </h1>
         )}
+
+        <div className="item-container">
+          {itemData && (
+            <div>
+              {itemData.map((item) => (
+                <ItemPrice
+                  key={item.id}
+                  item={item}
+                  handleUpdate={handleUpdate}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <section className="map-section">
