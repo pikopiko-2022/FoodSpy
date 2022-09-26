@@ -20,6 +20,7 @@ function Map() {
       <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
         {/* Pak n save mt albert address */}
         <Marker
+          data-testid="googleMap"
           position={{ lat: -36.893051, lng: 174.706238 }}
           title="Pak n Save, Mt Albert"
         />

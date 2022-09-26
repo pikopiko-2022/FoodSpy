@@ -8,10 +8,7 @@ router.get('/:id', (req, res) => {
     .then((item) => {
       res.json(item)
     })
-    .catch((err) => {
-      console.error(err.message)
-      res.status(500).send('Server error')
-    })
+    .catch(() => res.status(500).json({ message: 'Something went wrong' }))
 })
 
 module.exports = router
