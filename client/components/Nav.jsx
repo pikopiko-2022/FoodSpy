@@ -7,6 +7,7 @@ import {
   faMagnifyingGlassDollar,
   faCartShopping,
 } from '@fortawesome/free-solid-svg-icons'
+import Search from './Search'
 
 function Nav() {
   return (
@@ -21,13 +22,16 @@ function Nav() {
           <FontAwesomeIcon icon={faCartShopping} />
         </div>
       </div>
+      <div className="search-bar">
+        <Search />
+      </div>
       <div className="nav-btns">
-        <button className="list-btn">
+        {/* <button className="list-btn">
           <Link className="list" to="/list">
-            My List ~{/* <FontAwesomeIcon icon={faMagnifyingGlassDollar} /> */}
+            My List
             <FontAwesomeIcon icon={faPencil} />
           </Link>
-        </button>
+        </button> */}
         <div className="login-btn">
           <AuthNav />
         </div>
