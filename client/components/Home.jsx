@@ -40,6 +40,7 @@ export default function Home() {
             Explore and share local prices on essential items
           </h2>
         </div>
+
         <div className="dropdowns">
           <h3 className="landing-first-dropdown">1. Where are you?</h3>
           <form>
@@ -65,7 +66,6 @@ export default function Home() {
 
           <h3 className="landing-second-dropdown">2. Compare local prices</h3>
           <form className="form-dropdown" onSubmit={handleSubmit}>
-            {/* <div> */}
             <select
               className="form-select"
               name="item_id"
@@ -84,8 +84,6 @@ export default function Home() {
                 </option>
               ))}
             </select>
-            {/* </div> */}
-
             {selectedItem.item_id && (
               <div>
                 <button
@@ -98,10 +96,8 @@ export default function Home() {
               </div>
             )}
           </form>
-          {/* <div>
-            <Search />
-          </div> */}
         </div>
+
         <div>
           <h1>OR</h1>
         </div>
