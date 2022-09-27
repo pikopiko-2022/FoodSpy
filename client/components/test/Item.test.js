@@ -6,6 +6,8 @@ import { getItemData, getItem } from '../../apis/apiClient'
 import Item from '../Item'
 import ItemPrice from '../ItemPrice'
 import Map from '../Map'
+import { BrowserRouter } from 'react-router-dom'
+import { act } from 'react-dom/test-utils'
 
 jest.mock('../ItemPrice')
 jest.mock('../Map')
@@ -63,9 +65,15 @@ afterEach(() => {
 
 describe('<Item />', () => {
   it('should display information about an item', async () => {
-    render(<Item />)
+    await act(async () => {
+      render(
+        <BrowserRouter>
+          <Item />
+        </BrowserRouter>
+      )
 
-    await sleep(500) // give useEffect some time to run
+      await sleep(500) // give useEffect some time to run
+    })
 
     expect(screen.getByRole('heading')).toHaveTextContent(
       'Prices for ' + milkItem.item_name

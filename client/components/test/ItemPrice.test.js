@@ -1,8 +1,8 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import { screen, render, fireEvent } from '@testing-library/react'
-//import Item from '../Item'
 import ItemPrice from '../ItemPrice'
+
 const fakeItem = {
   id: 1,
   image: '/images/milk.jp',
