@@ -304,6 +304,14 @@ h1 {
   color:rgb(80, 78, 78);
 }
 
+.form-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
 .form-select {
   background-color: rgb(252, 153, 72);
   padding:12px 30px;
@@ -311,9 +319,11 @@ h1 {
   color: white;
   border: none;
   display: flex;
-  // margin: auto;
+  justify-content: center; 
+  align-items: center;
   margin-bottom: 30px;
   font-size: 20px;
+  text-align: center;
 }
 
 .home-tag-line {
@@ -343,7 +353,7 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 100px;
     cursor: pointer;
 }
