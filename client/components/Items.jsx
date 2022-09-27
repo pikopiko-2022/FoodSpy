@@ -21,6 +21,20 @@ function Items() {
     navigate(`/item/${event.target.value}`)
   }
 
+  const handleImageClick = (itemId) => {
+    const item = list.find((el) => el.id == itemId)
+    console.log(item)
+    navigate(`/item/${item.id}`)
+  }
+
+  function handleSelect(e, itemId) {
+    const item = list.find((el) => el.id == itemId)
+    console.log(item)
+    if (e.keyCode == 13) {
+      navigate(`/item/${item.id}`)
+    }
+  }
+
   return (
     <>
       <h2 className="item-title">Sorry, no results found</h2>
@@ -35,7 +49,8 @@ function Items() {
           return (
             <div key={item.id} className="foodContainer">
               <div
-                onClick={handleClick}
+                onClick={() => handleImageClick(item.id)}
+                onKeyDown={(e) => handleSelect(e, item.id)}
                 role="button"
                 value={item.id}
                 tabIndex="0"
