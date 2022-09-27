@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
@@ -55,12 +55,11 @@ describe('<Search/>', () => {
     useDispatch.mockReturnValue(fakeDispatch)
     render(<Search />, { wrapper: BrowserRouter })
 
-    const searchButton = screen.findByRole('button', {
+    const searchButton = screen.getByRole('button', {
       name: 'Show me the bargains!',
     })
     user.click(searchButton, { shiftKey: true })
-    expect.assertions(2)
+    expect.assertions(1)
     expect(searchButton).toBeTruthy()
-    expect(searchButton).not.toBeNull()
   })
 })

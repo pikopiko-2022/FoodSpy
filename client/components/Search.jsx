@@ -4,9 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { getItemByName } from '../apis/search'
 import { getList } from '../actions/list'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const initialData = {
   search: '',
@@ -24,7 +21,6 @@ function titleCase(str) {
 
 function Search() {
   const [form, setForm] = useState(initialData)
-
   const list = useSelector((state) => {
     return state.list
   })
@@ -43,27 +39,32 @@ function Search() {
   const handleSubmit = (event) => {
     event.preventDefault()
     const item = list.find((el) => el.item_name == titleCase(form.search))
-    getItemByName(item.item_name)
-    navigate(`/item/${item.id}`)
+    if (typeof item === 'object' && item !== null) {
+      const link = item.id
+      console.log(link)
+      setForm(initialData)
+      getItemByName(item.item_name)
+      navigate(`/item/${link}`)
+    } else {
+      setForm(initialData)
+      navigate(`/items`)
+    }
   }
 
   return (
-    <div className="search-container">
+    <div className="searchContainer">
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
           <input
-            // placeholder={faSearch}
-            placeholder="Search"
             id="search"
             value={form.search}
             name="search"
             type="text"
             onChange={handleChange}
-            className="search-form"
+            className="searchForm"
           />
-          <FontAwesomeIcon icon="fa-regular fa-magnifying-glass" />
+          <button className="searchButton">Search</button>
         </label>
-        {/* <button className="search-item">Search</button> */}
       </form>
     </div>
   )
