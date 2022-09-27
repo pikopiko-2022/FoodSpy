@@ -2,12 +2,12 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { getItemData, getItem } from '../../apis/apiClient'
-import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
 
 import Item from '../Item'
 import ItemPrice from '../ItemPrice'
 import Map from '../Map'
+import { BrowserRouter } from 'react-router-dom'
+import { act } from 'react-dom/test-utils'
 
 jest.mock('../ItemPrice')
 jest.mock('../Map')
@@ -38,15 +38,6 @@ const milkItem = {
   image_url: '/images/milk.jpeg',
 }
 
-const fakeDispatch = jest.fn()
-const fakeStore = {
-  subscribe: jest.fn(),
-  dispatch: fakeDispatch,
-  getState: jest.fn(() => {
-    return { store: { name: 'Milk', quantity: 2 } }
-  }),
-}
-
 getItemData.mockImplementation(() => Promise.resolve(allMilkPricesByStore))
 getItem.mockImplementation(() => Promise.resolve(milkItem))
 
@@ -74,15 +65,15 @@ afterEach(() => {
 
 describe('<Item />', () => {
   it('should display information about an item', async () => {
-    render(
-      <Provider store={fakeStore}>
+    await act(async () => {
+      render(
         <BrowserRouter>
           <Item />
         </BrowserRouter>
-      </Provider>
-    )
+      )
 
-    await sleep(500) // give useEffect some time to run
+      await sleep(500) // give useEffect some time to run
+    })
 
     expect(screen.getByRole('heading')).toHaveTextContent(
       'Prices for ' + milkItem.item_name

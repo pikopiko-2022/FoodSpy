@@ -39,6 +39,7 @@ export default function Home() {
             Explore and share local prices on essential items
           </h2>
         </div>
+
         <div className="dropdowns">
           <h3 className="landing-first-dropdown">1. Where are you?</h3>
           <form>
@@ -95,6 +96,7 @@ export default function Home() {
             )}
           </form>
         </div>
+
         <div>
           <h1>OR</h1>
         </div>
