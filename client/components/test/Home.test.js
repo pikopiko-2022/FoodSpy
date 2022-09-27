@@ -1,10 +1,10 @@
 import React from 'react'
-import {fireEvent, screen, render, getByTestId, getAllByTestId} from '@testing-library/react'
+import { fireEvent, screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Home from '../Home.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { getAllItems } from '../../apis/apiClient'
-import {act} from "react-dom/test-utils";
+import { act } from 'react-dom/test-utils'
 
 jest.mock('../../apis/apiClient.js')
 
@@ -38,12 +38,12 @@ getAllItems.mockImplementation(() =>
 )
 
 describe('<Home/>', () => {
-  it('displays item select header', async() => {
-    await act(async() => {
+  it('displays item select header', async () => {
+    await act(async () => {
       render(
-          <BrowserRouter>
-            <Home />
-          </BrowserRouter>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
       )
 
       await sleep(500)
@@ -73,7 +73,7 @@ describe('<Home/>', () => {
     const milkItemWhenUnselected = screen.queryByText(/milk/i)
     expect(milkItemWhenUnselected).not.toBeInTheDocument()
 
-    await act(async() => {
+    await act(async () => {
       await sleep(500)
     })
 
