@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import Search from './Search'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAllItems } from '../apis/apiClient'
 
@@ -65,7 +64,6 @@ export default function Home() {
 
           <h3 className="landing-second-dropdown">2. Compare local prices</h3>
           <form className="form-dropdown" onSubmit={handleSubmit}>
-            {/* <div> */}
             <select
               className="form-select"
               name="item_id"
@@ -84,8 +82,6 @@ export default function Home() {
                 </option>
               ))}
             </select>
-            {/* </div> */}
-
             {selectedItem.item_id && (
               <div>
                 <button
@@ -98,14 +94,11 @@ export default function Home() {
               </div>
             )}
           </form>
-          {/* <div>
-            <Search />
-          </div> */}
         </div>
         <div>
           <h1>OR</h1>
         </div>
-        <Link className="createList" to="/list">
+        <Link data-testid="listLink" className="createList" to="/list">
           Create shopping list
         </Link>
       </div>

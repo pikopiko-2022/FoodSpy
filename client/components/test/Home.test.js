@@ -18,7 +18,7 @@ describe('<Home/>', () => {
     }),
   }
 
-  it('displays item select header', () => {
+  it('displays explanatory header', () => {
     render(
       <Provider store={fakeStore}>
         <BrowserRouter>
@@ -27,7 +27,9 @@ describe('<Home/>', () => {
       </Provider>
     )
     const heading = screen.getAllByRole('heading')
-    expect(heading[1]).toHaveTextContent('What are you looking for?')
+    expect(heading[0]).toHaveTextContent(
+      'Explore and share local prices on essential items'
+    )
   })
   it('shows --Choose city-- before any selection', () => {
     render(
@@ -38,12 +40,48 @@ describe('<Home/>', () => {
       </Provider>
     )
     const heading = screen.getAllByRole('heading')
-    expect(heading[0]).toHaveTextContent('Where are you?')
+    expect(heading[1]).toHaveTextContent('Where are you?')
 
     const itemSelectWhenUnselected = screen.queryByText(/choose city/i)
     expect(itemSelectWhenUnselected).toBeVisible()
 
     const milkItemWhenUnselected = screen.queryByText(/Auckland/i)
     expect(milkItemWhenUnselected).toBeVisible()
+  })
+  it('shows --Choose item-- before any selection', () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    )
+    const heading = screen.getAllByRole('heading')
+    expect(heading[2]).toHaveTextContent('2. Compare local prices')
+
+    const itemSelectWhenUnselected = screen.queryByText(/choose item/i)
+    expect(itemSelectWhenUnselected).toBeVisible()
+  })
+  it('displays OR header', () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    )
+    const heading = screen.getAllByRole('heading')
+    expect(heading[3]).toHaveTextContent('OR')
+  })
+  it('displays shopping list button', () => {
+    render(
+      <Provider store={fakeStore}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    )
+    const link = screen.findByTestId('listLink')
+    expect(link).toBeTruthy()
   })
 })

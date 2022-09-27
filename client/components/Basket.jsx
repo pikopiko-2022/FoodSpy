@@ -53,7 +53,7 @@ function Basket({ basket, setBasket }) {
       {Object.keys(basket || {}).map((itemId) => {
         return (
           <div key={itemId}>
-            <p>{basket[itemId].name}</p>
+            <h3 className="basketText">{basket[itemId].name}</h3>
             <p className="smallBasketText">
               Item count: {basket[itemId].quantity}
               <button
@@ -87,11 +87,11 @@ function Basket({ basket, setBasket }) {
       <div>
         {bestPrice !== 0 && (
           <>
-            <p>Cheapest store:</p>
-            <p>{bestLocation}</p>
-            <p>
+            <h3 className="basketText">Cheapest store:</h3>
+            <p className="basketText">{bestLocation}</p>
+            <h3 className="basketText">
               <b>Total: $ {Number(bestPrice).toFixed(2)}</b>
-            </p>
+            </h3>
             <div className="smallMap">
               <SmallMap location={bestLocation} />
             </div>
