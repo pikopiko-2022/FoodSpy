@@ -21,24 +21,23 @@ body {
 
 .search-container {
   display: flex;
+
 }
 
 .search-bar {
   display: flex;
 }
 
-// .search-form {
-//   background-color: white;
-//   padding: 5px 5px;
-//   border-radius:10px;
-//   color: rgb(80, 78, 78);
-//   border: solid 1px rgb(80, 78, 78);
-//   display: flex;
-//   // margin: auto;
-//   margin-bottom: 30px;
-//   margin-left: 30px;
-//   font-size: 20px;
-// }
+.search-form {
+  background-color: white;
+  padding: 5px 5px;
+  border-radius:10px;
+  color: rgb(80, 78, 78);
+  border: solid 1px rgb(80, 78, 78);
+  margin: auto;
+  font-size: 20px;
+  // position:fixed;
+}
 
 .logo {
   display: flex;
@@ -329,7 +328,7 @@ h1 {
 .home-tag-line {
   font-family: 'Nothing You Could Do', cursive;
   font-weight: bold;
-  font-size: 30pt;
+  font-size: 2.5vh;
   max-width: 600px;
   text-align: center;
   display: flex;
