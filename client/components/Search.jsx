@@ -40,9 +40,13 @@ function Search() {
     event.preventDefault()
     const item = list.find((el) => el.item_name == titleCase(form.search))
     if (typeof item === 'object' && item !== null) {
+      const link = item.id
+      console.log(link)
+      setForm(initialData)
       getItemByName(item.item_name)
-      navigate(`/item/${item.id}`)
+      navigate(`/item/${link}`)
     } else {
+      setForm(initialData)
       navigate(`/items`)
     }
   }

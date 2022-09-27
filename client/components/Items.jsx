@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 import { getList } from '../actions/list'
 
@@ -24,19 +24,39 @@ function Items() {
   return (
     <>
       <h2 className="item-title">Sorry, no results found</h2>
-      <h3 className="h3-heading">Click on item to compare prices</h3>
+      <div>
+        <Link className="createList" to="/list">
+          Create shopping list
+        </Link>
+      </div>
+      <h3 className="h3-heading">Click on item to update or compare prices</h3>
       <div className="overallContainer">
         {list.map((item) => {
           return (
             <div key={item.id} className="foodContainer">
-              <img
-                className="listImage"
-                src={item.image_url}
-                alt={item.item_name}
-              />
+              <div
+                onClick={handleClick}
+                role="button"
+                value={item.id}
+                tabIndex="0"
+                id="image"
+                name="image"
+              >
+                <img
+                  className="listImage"
+                  src={item.image_url}
+                  alt={item.item_name}
+                />
+              </div>
               <h3 className="listHeading">{item.item_name}</h3>
-              <button id="go" value={item.id} name="go" onClick={handleClick}>
-                Go
+              <button
+                id="prices"
+                value={item.id}
+                name="prices"
+                onClick={handleClick}
+                className="checkPricesButton"
+              >
+                Check Prices
               </button>
             </div>
           )

@@ -279,8 +279,6 @@ h1 {
   color: rgb(80, 78, 78);
 }
 
-
-
 .bargainSubmitButton{
   background-color:rgb(80, 78, 78);
   font-size: 20px;
@@ -348,8 +346,11 @@ h1 {
     cursor: pointer;
 }
 
-.searchContainer{
-  display: flex;
+.createList:hover{
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
 }
 
 //-------- LIST PAGE ---------
@@ -451,7 +452,7 @@ h1 {
   color:rgb(80, 78, 78);
 }
 
-//---------SEARCH RESULTS------------
+//--------- SEARCH ------------
 
 .h3-heading{
   display: flex;
@@ -463,6 +464,66 @@ h1 {
   font-size: 20pt;
   color: rgb(80, 78, 78);
 }
+
+.searchContainer{
+  display: flex;
+}
+
+.searchButton{
+  background-color: rgb(80, 78, 78);
+  font-size: 15pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  border-radius: 1rem;
+  border:none;
+  padding: 3px 20px 3px 20px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.searchButton:hover{
+  background-color:white;
+  color:rgb(80, 78, 78);
+}
+
+.searchForm {
+  background-color: white;
+  padding: 5px 5px;
+  border-radius:10px;
+  color: rgb(80, 78, 78);
+  border: solid 1px rgb(80, 78, 78);
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.checkPricesButton{
+  background-color: rgb(80, 78, 78);
+  font-size: 10pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  border-radius: 1rem;
+  border:none;
+  padding: 3px 20px 3px 20px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkPricesButton:hover{
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 1rem;
+  color: white;
+}
+
+
 
 
   
