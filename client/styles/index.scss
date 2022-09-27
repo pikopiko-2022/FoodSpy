@@ -336,20 +336,33 @@ h1 {
   color: rgb(80, 78, 78);
 }
 
+.createList-box{
+  width: 20%;
+  display: flex;
+  float: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
 .createList {
   background-color: rgb(80, 78, 78);
     font-size: 20px;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+    // width: 
     border-radius: 10px;
     border: none;
     padding: 12px 28px;
-    // display: flex;
-    float: right;
+    display: flex;
+    float: center;
     align-items: center;
     justify-content: center;
     margin: auto;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
     margin-top: 30px;
     margin-bottom: 100px;
     cursor: pointer;
