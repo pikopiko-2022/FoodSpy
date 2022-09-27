@@ -23,13 +23,11 @@ function Items() {
 
   const handleImageClick = (itemId) => {
     const item = list.find((el) => el.id == itemId)
-    console.log(item)
     navigate(`/item/${item.id}`)
   }
 
   function handleSelect(e, itemId) {
     const item = list.find((el) => el.id == itemId)
-    console.log(item)
     if (e.keyCode == 13) {
       navigate(`/item/${item.id}`)
     }
@@ -37,17 +35,19 @@ function Items() {
 
   return (
     <>
-      <h2 className="item-title">Sorry, no results found</h2>
+      <h2 className="searchTitle">Sorry, no results found</h2>
       <div>
-        <Link className="createList" to="/list">
+        <Link className="createListResults" to="/list">
           Create shopping list
         </Link>
       </div>
-      <h3 className="h3-heading">Click on item to update or compare prices</h3>
-      <div className="overallContainer">
+      <p className="h3-text">
+        Search again or browse the items below to check prices
+      </p>
+      <div className="searchContainer">
         {list.map((item) => {
           return (
-            <div key={item.id} className="foodContainer">
+            <div key={item.id} className="searchResultContainer">
               <div
                 onClick={() => handleImageClick(item.id)}
                 onKeyDown={(e) => handleSelect(e, item.id)}
@@ -58,21 +58,24 @@ function Items() {
                 name="image"
               >
                 <img
-                  className="listImage"
+                  className="itemImage"
                   src={item.image_url}
                   alt={item.item_name}
                 />
               </div>
-              <h3 className="listHeading">{item.item_name}</h3>
-              <button
-                id="prices"
-                value={item.id}
-                name="prices"
-                onClick={handleClick}
-                className="checkPricesButton"
-              >
-                Check Prices
-              </button>
+              <div className="searchResultTextContainer">
+                <h3 className="searchResultHeading">{item.item_name}</h3>
+                <p className="searchResultDescription">{item.description}</p>
+                <button
+                  id="prices"
+                  value={item.id}
+                  name="prices"
+                  onClick={handleClick}
+                  className="checkPricesButton"
+                >
+                  Check Prices
+                </button>
+              </div>
             </div>
           )
         })}

@@ -56,6 +56,7 @@ function Search() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">
           <input
+            data-testid="searchInput"
             id="search"
             placeholder="Search"
             value={form.search}
