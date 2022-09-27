@@ -12,7 +12,6 @@ function ItemPrice({ item, handleUpdate }) {
   }
 
   const changeStyle = () => {
-    console.log('you just clicked')
     setStyle(!style)
   }
 
