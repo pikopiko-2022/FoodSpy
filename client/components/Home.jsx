@@ -64,27 +64,27 @@ export default function Home() {
           </form>
 
           <h3 className="landing-second-dropdown">2. Compare local prices</h3>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <select
-                className="form-select"
-                name="item_id"
-                value={item_id}
-                onChange={handleChange}
-                data-testid="select"
-              >
-                <option value=""> --- Choose item --- </option>
-                {items.map((item) => (
-                  <option
-                    data-testid="select-option"
-                    key={item.id}
-                    value={item.id}
-                  >
-                    {item.item_name}
-                  </option>
-                ))}
-              </select>
-            </div>
+          <form className="form-dropdown" onSubmit={handleSubmit}>
+            {/* <div> */}
+            <select
+              className="form-select"
+              name="item_id"
+              value={item_id}
+              onChange={handleChange}
+              data-testid="select"
+            >
+              <option value=""> --- Choose item --- </option>
+              {items.map((item) => (
+                <option
+                  data-testid="select-option"
+                  key={item.id}
+                  value={item.id}
+                >
+                  {item.item_name}
+                </option>
+              ))}
+            </select>
+            {/* </div> */}
 
             {selectedItem.item_id && (
               <div>

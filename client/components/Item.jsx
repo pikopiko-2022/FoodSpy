@@ -41,26 +41,24 @@ function Item() {
           Create shopping list
         </Link>
       </div>
-      <div>
-        {item && (
-          <h1 className="item-title" data-testid="main-heading">
-            Prices for {item.item_name}
-          </h1>
-        )}
+      {item && (
+        <h1 className="item-title" data-testid="main-heading">
+          Prices for {item.item_name}
+        </h1>
+      )}
 
-        <div className="item-container">
-          {itemData && (
-            <div>
-              {itemData.map((item) => (
-                <ItemPrice
-                  key={item.id}
-                  item={item}
-                  handleUpdate={handleUpdate}
-                />
-              ))}
-            </div>
-          )}
-        </div>
+      <div className="item-container">
+        {itemData && (
+          <div>
+            {itemData.map((item) => (
+              <ItemPrice
+                key={item.id}
+                item={item}
+                handleUpdate={handleUpdate}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <section className="map-section">

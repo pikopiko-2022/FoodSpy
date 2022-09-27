@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import AuthNav from './AuthNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faPencil,
   faMagnifyingGlassDollar,
   faCartShopping,
 } from '@fortawesome/free-solid-svg-icons'
@@ -41,4 +40,3 @@ function Nav() {
 }
 
 export default Nav
-
