@@ -36,11 +36,6 @@ function Item() {
 
   return (
     <>
-      <div>
-        <Link className="createList" to="/list">
-          Create shopping list
-        </Link>
-      </div>
       {item && (
         <h1 className="item-title" data-testid="main-heading">
           Prices for {item.item_name}
@@ -60,7 +55,11 @@ function Item() {
           </div>
         )}
       </div>
-
+      <div className="createList-box">
+        <Link className="createList" to="/list">
+          Create shopping list
+        </Link>
+      </div>
       <section className="map-section">
         <Map />
       </section>
