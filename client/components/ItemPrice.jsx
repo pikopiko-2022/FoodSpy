@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 function ItemPrice({ item, handleUpdate }) {
   const [itemUpdate, setItemUpdate] = useState('')
+  const [style, setStyle] = useState('')
 
   const handleInput = (e) => {
     setItemUpdate(e.target.value)
@@ -9,6 +10,12 @@ function ItemPrice({ item, handleUpdate }) {
   const localDate = (utcDate) => {
     return new Date(utcDate).toLocaleString()
   }
+
+  const changeStyle = () => {
+    console.log('you just clicked')
+    setStyle(!style)
+  }
+
   return (
     <div className="item-result" key={item.id}>
       <img
@@ -24,7 +31,13 @@ function ItemPrice({ item, handleUpdate }) {
       <div className="item-price">
         {' '}
         Price ${Number(item.price).toFixed(2)}
-        <button className="confirm-btn">Confirm Price</button>
+        <button
+          onClick={changeStyle}
+          className={'confirm-btn ' + (style ? 'confirm-btn2' : '')}
+        >
+          {' '}
+          Confirm Price
+        </button>
       </div>
       <div className="update-price">
         <input
