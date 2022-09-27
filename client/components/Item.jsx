@@ -69,11 +69,13 @@ function Item() {
           </div>
         )}
       </div>
+
       <div className="createList-box">
         <Link className="createList" to="/list">
           Create shopping list
         </Link>
       </div>
+
       <section className="map-section">
         <Map />
       </section>
