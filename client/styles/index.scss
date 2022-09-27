@@ -158,6 +158,10 @@ color:rgb(80, 78, 78);
   cursor: pointer;
 }
 
+.confirm-btn2 {
+  background-color: green;
+}
+
 .update-btn {
   font-size: 12pt;
   background-color: rgb(252, 153, 72);
@@ -239,7 +243,7 @@ footer {
   flex-flow:column wrap;
   align-items: center;
   // justify-content: center;
-  padding-top: 7vh;
+  padding-top: 3vh;
   background-image: url("../images/veg-bg.jpg");
   background-size:cover;
   background-repeat: no-repeat;
@@ -250,7 +254,8 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding:relative;
+  padding-top: 3vh;
+  // padding:relative;
 }
 
 .form-select-second {
@@ -261,7 +266,7 @@ footer {
 
 .landing-first-dropdown {
   color: rgb(80, 78, 78);
-  font-size: 30px;
+  font-size: 1.5rem;
   margin-top:10px;
   height:30px;
   cursor: pointer;
@@ -269,7 +274,7 @@ footer {
 
 .landing-second-dropdown {
   color: rgb(80, 78, 78);
-  font-size: 30px;
+  font-size: 1.5rem;
   align-items: center;
   cursor: pointer;
 }
@@ -280,8 +285,8 @@ h1 {
 
 .bargainSubmitButton{
   background-color:rgb(80, 78, 78);
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1.2rem;
+  // font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   border-radius: 10px;
@@ -306,12 +311,16 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
 .form-select {
   background-color: rgb(252, 153, 72);
   padding:12px 30px;
+      font-family: Verdana,
+      Geneva,
+      Tahoma,
+      sans-serif;
+
   border-radius:10px;
   color: white;
   border: none;
@@ -319,7 +328,7 @@ h1 {
   justify-content: center; 
   align-items: center;
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -332,7 +341,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  // margin-top: 20px;
   color: rgb(80, 78, 78);
 }
 
@@ -348,11 +357,10 @@ h1 {
 
 .createList {
   background-color: rgb(80, 78, 78);
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 1.2rem;
+    // font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    // width: 
     border-radius: 10px;
     border: none;
     padding: 12px 28px;
@@ -370,10 +378,19 @@ h1 {
 }
 
 .createList:hover{
-  background-color: grey;
+  background-color: rgb(244, 239, 239);
   border: 2px solid black;
   border-radius: 10px;
-  color: white;
+  color: rgb(10, 1, 1);
+}
+
+.splitDropdowns {
+  padding: 0.5vh;
+  color: red;
+  margin-top: 0; 
+  display: flex;
+
+
 }
 
 //-------- LIST PAGE ---------
