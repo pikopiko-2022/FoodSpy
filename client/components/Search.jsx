@@ -21,6 +21,7 @@ function titleCase(str) {
 
 function Search() {
   const [form, setForm] = useState(initialData)
+  const [item, setItem] = useState({})
   const list = useSelector((state) => {
     return state.list
   })
@@ -30,7 +31,8 @@ function Search() {
 
   useEffect(() => {
     dispatch(getList())
-  }, [])
+    console.log('render')
+  }, [item])
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value })
@@ -38,13 +40,14 @@ function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const item = list.find((el) => el.item_name == titleCase(form.search))
-    if (typeof item === 'object' && item !== null) {
-      const link = item.id
-      console.log(link)
+    const thing = list.find((el) => el.item_name == titleCase(form.search))
+    if (typeof thing === 'object' && thing !== null) {
+      console.log(thing)
+      setItem(thing)
+      getItemByName(thing.item_name)
+      console.log(thing.id)
       setForm(initialData)
-      getItemByName(item.item_name)
-      navigate(`/item/${link}`)
+      navigate(`/item/${thing.id}`)
     } else {
       setForm(initialData)
       navigate(`/items`)
@@ -57,6 +60,7 @@ function Search() {
         <label htmlFor="search">
           <input
             id="search"
+            placeholder="Search"
             value={form.search}
             name="search"
             type="text"

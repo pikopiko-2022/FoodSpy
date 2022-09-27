@@ -28,6 +28,20 @@ function Item() {
     }
   }, [itemData])
 
+  useEffect(() => {
+    getItemData(id)
+      .then((d) => {
+        setItemData(d)
+      })
+      .catch(logError)
+
+    getItem(id)
+      .then((d) => {
+        setItem(d)
+      })
+      .catch(logError)
+  }, [id])
+
   function handleUpdate(itemId, price) {
     // api send the request to update the item price
     updateItemPrice(itemId, price)
