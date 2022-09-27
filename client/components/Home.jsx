@@ -45,7 +45,7 @@ export default function Home() {
           <form>
             <div>
               <select className="form-select">
-                <option value=""> ---Choose city--- </option>
+                <option value=""> --- Choose city --- </option>
                 <option value="auckland">Auckland</option>
                 <option value="tauranga">Tauranga</option>
                 <option value="rotorua">Rotorua</option>
