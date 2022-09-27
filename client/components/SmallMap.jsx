@@ -2,8 +2,8 @@ import React, { useMemo } from 'react'
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
 
 const containerStyle = {
-  width: '260px',
-  height: '220px',
+  width: '30vw',
+  height: '20vw',
 }
 
 function SmallMap({ location }) {
@@ -28,7 +28,7 @@ function SmallMap({ location }) {
   }
 
   return (
-    <div className="map">
+    <div className="smallMap">
       <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
         <Marker
           data-testid="googleMarker"

@@ -1,6 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { getList } from '../../actions/list'
@@ -47,21 +48,21 @@ describe('<List/>', () => {
   it('gets state list data on initial render', () => {
     useSelector.mockReturnValue(fakeAllItems)
     useDispatch.mockReturnValue(fakeDispatch)
-    render(<List />)
+    render(<List />, { wrapper: BrowserRouter })
 
     expect(fakeDispatch).toHaveBeenCalledWith(getListMockReturn)
   })
   it('gets state item data on initial render', () => {
     useSelector.mockReturnValue(fakeAllItems)
     useDispatch.mockReturnValue(fakeDispatch)
-    render(<List />)
+    render(<List />, { wrapper: BrowserRouter })
 
     expect(fakeDispatch).toHaveBeenCalledWith(getItemsMockReturn)
   })
   it('shows images of food items', () => {
     useSelector.mockReturnValue(fakeAllItems)
     useDispatch.mockReturnValue(fakeDispatch)
-    render(<List />)
+    render(<List />, { wrapper: BrowserRouter })
 
     const image = screen.getAllByRole('img')
     expect(image).toBeTruthy()
@@ -71,7 +72,7 @@ describe('<List/>', () => {
   it('displays headings', () => {
     useSelector.mockReturnValue(fakeAllItems)
     useDispatch.mockReturnValue(fakeDispatch)
-    render(<List />)
+    render(<List />, { wrapper: BrowserRouter })
 
     const levelTwoHeading = screen.getAllByRole('heading', { level: 2 })
     expect(levelTwoHeading).toHaveLength(2)
@@ -79,7 +80,7 @@ describe('<List/>', () => {
   it('onKeyDown event on image initiates getPrice dispatch', () => {
     useSelector.mockReturnValue(fakeAllItems)
     useDispatch.mockReturnValue(fakeDispatch)
-    render(<List />)
+    render(<List />, { wrapper: BrowserRouter })
 
     const button = screen.getAllByRole('button')
     fireEvent.keyDown(button[0], { key: 'Enter', keyCode: 13 })
@@ -89,7 +90,7 @@ describe('<List/>', () => {
   it('onClick event on image sets basket', () => {
     useSelector.mockReturnValue(fakeAllItems)
     useDispatch.mockReturnValue(fakeDispatch)
-    render(<List />)
+    render(<List />, { wrapper: BrowserRouter })
 
     const click = screen.getAllByRole('button')
     fireEvent.click(click[0], { shiftKey: true })

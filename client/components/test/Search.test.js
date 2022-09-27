@@ -56,7 +56,7 @@ describe('<Search/>', () => {
     render(<Search />, { wrapper: BrowserRouter })
 
     const searchButton = screen.getByRole('button', {
-      name: 'Show me the bargains!',
+      name: 'Search',
     })
     user.click(searchButton, { shiftKey: true })
     expect.assertions(1)

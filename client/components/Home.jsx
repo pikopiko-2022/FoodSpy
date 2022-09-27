@@ -100,7 +100,7 @@ export default function Home() {
         <div>
           <h1>OR</h1>
         </div>
-        <Link className="createList" to="/list">
+        <Link data-testid="listLink" className="createList" to="/list">
           Create shopping list
         </Link>
       </div>
