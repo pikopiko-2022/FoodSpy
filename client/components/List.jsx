@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import { getList } from '../actions/list'
 import { getPrice } from '../actions/price'
@@ -14,6 +15,7 @@ function List() {
   })
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(getList())
@@ -33,6 +35,11 @@ function List() {
     }
   }
 
+  const handleButtonClick = (event) => {
+    event.preventDefault()
+    navigate(`/item/${event.target.value}`)
+  }
+
   function handleSelect(e, itemId) {
     if (e.keyCode == 13) {
       dispatch(getPrice(itemId))
@@ -44,32 +51,45 @@ function List() {
       <h2 className="item-title">My Shopping List</h2>
       <p className="listHeading">Click item to add to list</p>
 
-      <div className="basketContainer">
-        <Basket basket={basket} setBasket={setBasket} />
-      </div>
-
       <div className="overallContainer">
-        {/* <div> */}
-        {list.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="foodContainer"
-              role="button"
-              onClick={() => handleClick(item.id)}
-              onKeyDown={(e) => handleSelect(e, item.id)}
-              tabIndex="0"
-            >
-              <img
-                className="listImage"
-                src={item.image_url}
-                alt={item.item_name}
-              />
-              <h3 className="listHeading">{item.item_name}</h3>
-            </div>
-          )
-        })}
-        {/* </div> */}
+        <div className="basketContainer">
+          <Basket basket={basket} setBasket={setBasket} />
+        </div>
+        <div className="listContainer">
+          {list.map((item) => {
+            return (
+              <div
+                key={item.id}
+                className="foodContainer"
+                role="button"
+                onClick={() => handleClick(item.id)}
+                onKeyDown={(e) => handleSelect(e, item.id)}
+                tabIndex="0"
+              >
+                <div className="imageContainer">
+                  <img
+                    className="listImage"
+                    src={item.image_url}
+                    alt={item.item_name}
+                  />
+                  <div className="hoverText">Click to add to list</div>
+                </div>
+                <div className="listRow">
+                  <h3 className="listName">{item.item_name}</h3>
+                  <button
+                    id="prices"
+                    value={item.id}
+                    name="prices"
+                    onClick={handleButtonClick}
+                    className="listButton"
+                  >
+                    Compare Prices
+                  </button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </>
   )

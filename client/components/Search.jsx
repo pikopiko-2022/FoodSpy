@@ -31,7 +31,6 @@ function Search() {
 
   useEffect(() => {
     dispatch(getList())
-    console.log('render')
   }, [item])
 
   const handleChange = (event) => {
@@ -40,14 +39,12 @@ function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const thing = list.find((el) => el.item_name == titleCase(form.search))
-    if (typeof thing === 'object' && thing !== null) {
-      console.log(thing)
-      setItem(thing)
-      getItemByName(thing.item_name)
-      console.log(thing.id)
+    const search = list.find((el) => el.item_name == titleCase(form.search))
+    if (typeof search === 'object' && search !== null) {
+      setItem(search)
+      getItemByName(search.item_name)
       setForm(initialData)
-      navigate(`/item/${thing.id}`)
+      navigate(`/item/${search.id}`)
     } else {
       setForm(initialData)
       navigate(`/items`)
