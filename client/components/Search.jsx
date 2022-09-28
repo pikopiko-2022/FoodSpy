@@ -5,6 +5,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getItemByName } from '../apis/search'
 import { getList } from '../actions/list'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+
 const initialData = {
   search: '',
 }
@@ -65,7 +68,9 @@ function Search() {
             onChange={handleChange}
             className="searchForm"
           />
-          <button className="searchButton">Search</button>
+          <button className="searchButton">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
         </label>
       </form>
     </div>
