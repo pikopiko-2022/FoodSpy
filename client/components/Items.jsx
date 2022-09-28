@@ -44,7 +44,7 @@ function Items() {
       <p className="h3-text">
         Search again or browse the items below to check prices
       </p>
-      <div className="searchContainer">
+      <div className="searchListContainer">
         {list.map((item) => {
           return (
             <div key={item.id} className="searchResultContainer">
