@@ -37,7 +37,6 @@ body {
   border: solid 1px rgb(80, 78, 78);
   margin: auto;
   font-size: 20px;
-  // position:fixed;
 }
 
 .logo {
@@ -73,7 +72,6 @@ font-weight: bold;
   border-radius: 2rem;
   border: none;
   padding: 3px 20px 3px 20px;
-  // background-color:rgb(184, 255, 225) ;
   background-color:white;
   cursor: pointer;
   }
@@ -239,7 +237,6 @@ footer {
   display: flex;
   flex-flow:column wrap;
   align-items: center;
-  // justify-content: center;
   padding-top: 7vh;
   background-image: url("../images/veg-bg.jpg");
   background-size:cover;
@@ -353,7 +350,6 @@ h1 {
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    // width: 
     border-radius: 10px;
     border: none;
     padding: 12px 28px;
@@ -362,9 +358,6 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: auto;
-    // display: block;
-    // margin-left: auto;
-    // margin-right: auto;
     margin-top: 30px;
     margin-bottom: 100px;
     cursor: pointer;
@@ -668,8 +661,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  // margin: auto;
-  // margin-top: 10px;
   margin-bottom: 20px;
   font-size: 18pt;
   color: rgb(80, 78, 78);
@@ -837,7 +828,6 @@ h1 {
 .createListResults {
   background-color: rgb(80, 78, 78);
     font-size: 20px;
-    // font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     width: 230px;
@@ -849,9 +839,6 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: auto;
-    // display: block;
-    // margin-left: auto;
-    // margin-right: auto;
     margin-top: 30px;
     margin-bottom: 20px;
     cursor: pointer;
