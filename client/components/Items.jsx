@@ -51,6 +51,7 @@ function Items() {
               <div
                 onClick={() => handleImageClick(item.id)}
                 onKeyDown={(e) => handleSelect(e, item.id)}
+                data-testid="imageKeyDown"
                 role="button"
                 value={item.id}
                 tabIndex="0"
