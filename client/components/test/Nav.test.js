@@ -23,7 +23,9 @@ describe('<Nav />', () => {
         </BrowserRouter>
       </Provider>
     )
-    const searchButton = screen.getByRole('button', { name: 'Search' })
+    const searchButton = screen.getByRole('button', {
+      icon: 'faMagnifyingGlass',
+    })
     expect(searchButton).toBeTruthy()
   })
   it('displays the home logo to select', () => {
