@@ -44,7 +44,6 @@ body {
   border: solid 1px rgb(80, 78, 78);
   margin: auto;
   font-size: 20px;
-  // position:fixed;
 }
 
 .logo {
@@ -82,7 +81,6 @@ font-weight: bold;
   border-radius: 2rem;
   border: none;
   padding: 3px 20px 3px 20px;
-  // background-color:rgb(184, 255, 225) ;
   background-color:white;
   cursor: pointer;
   }
@@ -390,9 +388,6 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: auto;
-    // display: block;
-    // margin-left: auto;
-    // margin-right: auto;
     margin-top: 30px;
     margin-bottom: 100px;
     cursor: pointer;
@@ -689,14 +684,23 @@ h1 {
 
 //--------- SEARCH ------------
 
-.h3-heading{
+.h3-text{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 20pt;
+  font-size: 16pt;
+  color: rgb(80, 78, 78);
+}
+
+.h3-heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18pt;
   color: rgb(80, 78, 78);
 }
 
@@ -735,6 +739,17 @@ h1 {
   font-size: 20px;
 }
 
+.searchTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 45px;
+  margin-bottom: 30px;
+  font-size: 30pt;
+  color: rgb(80, 78, 78);
+}
+
 .checkPricesButton{
   background-color: rgb(80, 78, 78);
   font-size: 10pt;
@@ -746,7 +761,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-left: 10px;
+  margin-left: 30px;
   margin-right: 10px;
   cursor: pointer;
 }
@@ -755,6 +770,122 @@ h1 {
   background-color: grey;
   border: 2px solid black;
   border-radius: 1rem;
+  color: white;
+}
+
+.searchListContainer {
+  display: flex;
+  max-width: 100vw;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.searchResultContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 180px;
+  margin-left: 3vw;
+  margin-right: 2vw;
+  margin-bottom: 1vw;
+  margin-top: 2vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+.searchResultTextContainer{
+  display: flex;
+  width: 90vw;
+}
+
+.itemImage {
+  border: 5px solid lightgrey;
+  object-fit: contain;
+  border-radius:10px;
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+}
+
+@media only screen and (min-width: 950px) {
+  .itemImage {
+    border: 5px solid lightgrey;
+    object-fit: contain;
+    border-radius:10px;
+    width: 130px;
+    height: 130px;
+    padding: 3px;
+  }
+}
+
+.itemImage:hover {
+  border-radius:10px;
+  border: 5px solid rgb(80, 78, 78);
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+  opacity: 0.5; 
+}
+
+@media only screen and (min-width: 950px) {
+  .itemImage:hover {
+    border-radius:10px;
+    border: 5px solid rgb(80, 78, 78);
+    width: 130px;
+    height: 130px;
+    padding: 3px;
+    opacity: 0.5; 
+  }
+}
+
+.searchResultHeading {
+  color:rgb(80, 78, 78);
+  display: flex;
+  align-items: left;
+  width: 23vw;
+  justify-content: left;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.searchResultDescription {
+  color:rgb(80, 78, 78);
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  width: 35vw;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.createListResults {
+  background-color: rgb(80, 78, 78);
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    width: 230px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 22px;
+    display: flex;
+    float: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.createListResults:hover{
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 10px;
   color: white;
 }
 

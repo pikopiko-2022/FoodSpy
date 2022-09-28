@@ -1,6 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
@@ -61,5 +61,22 @@ describe('<Search/>', () => {
     user.click(searchButton, { shiftKey: true })
     expect.assertions(1)
     expect(searchButton).toBeTruthy()
+  })
+  it('displays search input', async () => {
+    useSelector.mockReturnValue(fakeAllItems)
+    useDispatch.mockReturnValue(fakeDispatch)
+    render(<Search />, { wrapper: BrowserRouter })
+
+    screen.debug
+    const searchInput = screen.getByPlaceholderText('Search')
+    fireEvent.change(searchInput, { target: { value: 'milk' } })
+    const searchButton = screen.getByRole('button')
+    fireEvent.click(searchButton, { shiftKey: true })
+    const searchTest = screen.findByTestId('searchInput')
+
+    expect.assertions(3)
+    expect(searchTest).toBeTruthy()
+    expect(searchTest).not.toBeNull()
+    expect(searchInput).toBeInTheDocument()
   })
 })
